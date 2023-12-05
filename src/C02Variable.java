@@ -20,8 +20,10 @@ public class C02Variable {
         System.out.println(double_num);
 
 //        반복적인 연산시 오차가 확대되어 오차확인가능
-        for(int i=0;i<100;i++){
-
+        double a = 0;
+        for(int i=0; i<1000; i++) {
+            a = a + 0.1 * 10;
         }
+        System.out.println(a/10);
     }
 }
