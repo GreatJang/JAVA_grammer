@@ -95,10 +95,14 @@ BigDecimal
     - 실수형 : float, double
     - 문자형 : char
     -
+
 - int는 선언만 할 경우 메모리상에 0이할당
 - String은 선언만할경우 메모리상에 null이 할당
 
 연산자
 - 자바에서는 여러 종류의 연산을 수행하기 위한 다양한 연산자(operator)를 제공~
+
+
+
 
 
