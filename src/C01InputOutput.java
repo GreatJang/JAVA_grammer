@@ -37,5 +37,9 @@ public class C01InputOutput {
         System.out.println("true 또는 false를 입력해주세요");
         boolean input_boolean = myScan.nextBoolean();
         System.out.println("입력하신 true or false는 : " + input_boolean);
+
+//        입출력 시스템 메모리 해제
+//        써드 파티에 대한 사용 후 메모리 해제는 습관적으로 해주는게 좋다.
+        myScan.close();
     }
 }
