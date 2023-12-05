@@ -60,14 +60,45 @@ public class C02Variable {
 //        }
 
 //        묵시적 타입변환
-        char ch1 = 'a';
-        int ch1_num = ch1;
-        System.out.println(ch1_num);
+//        char ch1 = 'a';
+//        int ch1_num = ch1;
+//        System.out.println(ch1_num);
+//
+//        int my_int1 = 10;
+////        int -> double
+//        double my_double1 = my_int1;
+//        System.out.println(my_double1);
+////        에러 발생 : my_int1 = my_double1;
+////        double -> int 명시적 타입은 가능 : 소수점값 손실발생 가능성이 있다.
+//        my_int1 = (int) my_double1;
+//        double my_double2 =  7.2f;
+//        System.out.println(my_double2);
+//
+////        명시적 타입변환
+//        char my_char2 = 'b';
+//        int char_num = (int)my_char2;
+//        int a가 1 int b가 4일때 둘을 나눈값을 int에 담아 출력. double에 담아 출력.
+//        int a = 1;
+//        int b = 4;
+//        int c = a/b;
+//        System.out.println(c);
+////        둘다 int이면 그 결과값이 int일 것으로 java가 예상을 하기때문에 이미
+////        결과값이 나올때 오차가 발생. 그렇기 때문에 타입을 double로 지정해야함.(둘중에 하나라도)
+//        double d = a/b;
+//        System.out.println(d);
+//        double d2 = (double)a/b;
+//        System.out.println(d2);
 
-        int my_int1 = 10;
-        double my_double1 = my_int1;
-        System.out.println(my_double1);
-//        에러 발생 : my_int1 = my_double1;
+//        변수와 상수
+//        선언과 동시에 초기화
+//        자료형은 첫 선언할때만 사용하면 된다.
+        int a1 = 10;
+//        변수값 변경
+        a1 = 20;
+//        선언만 한뒤에 나중에 초기화
+        int a2; // 선언만 됐을때는 값이 0으로 초기화
+        a2 = 20;
+
 
 
     }
