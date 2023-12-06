@@ -73,7 +73,7 @@ public class C05LoopStatements {
 //        }
 
 ////        배열과 enhance for문
-        int[] myArr = {1,5,7,9,10};
+//        int[] myArr = {1,5,7,9,10};
 ////        일반 for문
 //        for(int i=0; i<5; i++){
 //            System.out.println(myArr[i]);
@@ -105,7 +105,32 @@ public class C05LoopStatements {
 //        }
 //        System.out.println(sum);
 
-//        자바 변수의 유효범위 : { }
+////        자바 변수의 유효범위 : { }
+//        int num = 10;
+//        if(num > 1){
+//            int abc = 20;
+//            num = 20;
+//        }
+//        System.out.println(num); // if문 밖에서 선언된 변수값을 if안에서 접근하여 변경하는 것은 가능.
+//        System.out.println(abc); // if문 안에서 정의된 변수는 밖에서 인지 불가
+
+//        for(int n = 2; n < 10; n++){
+//            System.out.println(n + "단입니다.");
+//
+//            for(int i = 1; i < 10; i++){
+//                System.out.println(n + " X " + i + " = " + n*i);
+//            }
+//        }
+
+//        2중 for문을 통해 배열접근
+        int[][] arr = {{1,2,3,4}, {5,6,7,8}};
+
+        for(int i = 0; i< arr.length; i++){
+            for(int a = 0; a< arr[i].length; a++){
+                System.out.println(arr[i][a]);
+            }
+        }
+
 
 
     }
