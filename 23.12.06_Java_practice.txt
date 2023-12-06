@@ -51,11 +51,28 @@ Switch문
 - for 문
 - Enhanced for 문
 
-while 문
+⭐while 문
 - while (조건식) {
     조건식의 결과가 참인 동안 반복적으로 실행하고자 하는 명령문;
 }
 - while 문은 특정 조건을 만족할 때까지 계속해서 주어진 명령문을 반복
     - while 문 내부에 조건을 false로 만드는 로직이 존재하지 않을 경우엔 프로그램이 무한 루프(infinite loop)
     - 무한 loop가 default
+
+do / while 문
+- do / while 문은 일단 루프를 한 번 실행한 후에 조건식을 검사
+- do{
+    조건식의 결과가 참인 동안 반복적으로 실행하고자 하는 명령문;
+} while (조건식);
+- do / while은 초기식 검증을 위해서 사용
+
+⭐for 문
+- for 문은 while 문과는 달리 자체적으로 초기식, 조건식, 증감식을 모두 포함
+- 반복문이 종료가 될 수 있도록 기본설계가 되어 있다는 점에서 while문과의 차이
+- for (초기식; 조건식; 증감식){
+}
+
+ break, continue
+
+
 
