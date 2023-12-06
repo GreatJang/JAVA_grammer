@@ -96,6 +96,7 @@ public class C03Operator {
 //        sameindex : 1001
 //        a : 00100
 //        b : 10010
+
 //        두번째 반복
 //        sameindex : 00000
 //        a : 10110 => 22
