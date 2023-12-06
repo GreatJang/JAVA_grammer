@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class C05LoopStatements {
@@ -63,15 +64,48 @@ public class C05LoopStatements {
 //            System.out.println(a);
 //        }
 
-//        for, continue를 사용해서 홀수만 출력되도록(1~10까지 수 중에)
-        for(int a = 1; a < 11; a++){
-            if(a%2 == 0){
-                continue; //continue를 만나면 위로 올라가서 if문 다시실행
-            }
-            System.out.println(a);
-        }
+////        for, continue를 사용해서 홀수만 출력되도록(1~10까지 수 중에)
+//        for(int a = 1; a < 11; a++){
+//            if(a%2 == 0){
+//                continue; //continue를 만나면 위로 올라가서 if문 다시실행
+//            }
+//            System.out.println(a);
+//        }
 
+////        배열과 enhance for문
+        int[] myArr = {1,5,7,9,10};
+////        일반 for문
+//        for(int i=0; i<5; i++){
+//            System.out.println(myArr[i]);
+//        }
+//
+////        enhance for문
+//        for(int a : myArr){
+//            System.out.println(a);
+//        }
 
+////        일반for문을 통해 myArr의 값에 10씩 더한 뒤에 출력.
+//        for(int i = 0; i< myArr.length; i++){
+//            myArr[i] += 10;
+//        }
+//        System.out.println(Arrays.toString(myArr));
+
+//        enhanced for문을 통해 myArr의 값에 10씩 더한 뒤에 출력.
+//        enhanced for문으로는 값 변경이 불가능 하다. 출력 시 값에 10씩 더해지지 않음.
+//        배열의 조회 및 합계에 자주 사용
+//        for(int a : myArr){
+//            a += 10;
+//        }
+//        System.out.println(Arrays.toString(myArr));
+
+////        배열의 합계에 사용시 간단하게 사용가능
+//        int sum = 0;
+//        for(int a : myArr){
+//            sum += a;
+//        }
+//        System.out.println(sum);
+
+//        자바 변수의 유효범위 : { }
 
 
     }
