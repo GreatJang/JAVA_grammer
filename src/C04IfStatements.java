@@ -130,9 +130,7 @@ public class C04IfStatements {
                 break;
             default:
                 System.out.println("잘못누르셨습니다.");
+                break;
         }
-
-
-
     }
 }
