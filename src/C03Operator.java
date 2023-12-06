@@ -69,11 +69,39 @@ public class C03Operator {
 //            System.out.println("조건은 참입니다.");
 //        }
 
-//        0000101       0000110
-        int n3 = 5; int n4 = 6;
-        System.out.println(n3 & n4); //4
-        System.out.println(n3 | n4); //7
-        System.out.println(n3 ^ n4); //3 => 000011
+////        0000101       0000110
+//        int n3 = 5; int n4 = 6;
+////        비트연산자 : &, 각자리의수가 모두 1일경우에만 1
+//        System.out.println(n3 & n4); //4 => 0000100
+////        비트연산자 : |, 각자리의수가 하나라도 1일경우는 1
+//        System.out.println(n3 | n4); //7 => 0000111
+////        비트연산자 : ^, 각자리의수가 일치하지 않은 경우에
+//        System.out.println(n3 ^ n4); //3 => 0000011
+////        ~ : not연산, 각자리마다 반대의 숫자 반환
+//        System.out.println(~ n3); //첫째자리가 음/양인데, 음으로 변환
+////        시프트연산자 : <<, >> = 곱셈과 나눗셈의 효과가 발생
+//        System.out.println(n3 << 1); //0001010  2의 1승만큼 곱셈
+//        System.out.println(n3 << 2); //0010100  2의 2승만큼 곱셈
+
+        int a = 13; //00001101
+        int b = 9;  //00001001
+
+        while(b!=0) { // b가 0일때 while문 종료
+            int same_index = a & b; //and연산으로 구한 carry 생성
+            a = a ^ b;  //XOR 연산으로 구한 비트값 a에 할당
+            b = same_index << 1;
+        }
+
+//        첫번째 반복
+//        sameindex : 1001
+//        a : 00100
+//        b : 10010
+//        두번째 반복
+//        sameindex : 00000
+//        a : 10110 => 22
+        System.out.println(a);
+
+
 
     }
 }
