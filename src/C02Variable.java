@@ -45,6 +45,7 @@ public class C02Variable {
 //        System.out.println(my_char);
 //
 ////        boolean : true(1) or false(0)
+//        boolean 기본값 : false(0)
 //        boolean my_bool = true;
 //        System.out.println(my_bool);
 ////        my_bool은 이미 true값이 들어가 있으므로 my_bool만 넣어줘도 성립가능
@@ -60,19 +61,22 @@ public class C02Variable {
 //        }
 
 //        묵시적 타입변환
-//        char ch1 = 'a';
-//        int ch1_num = ch1;
-//        System.out.println(ch1_num);
-//
-//        int my_int1 = 10;
-////        int -> double
-//        double my_double1 = my_int1;
-//        System.out.println(my_double1);
-////        에러 발생 : my_int1 = my_double1;
-////        double -> int 명시적 타입은 가능 : 소수점값 손실발생 가능성이 있다.
-//        my_int1 = (int) my_double1;
-//        double my_double2 =  7.2f;
-//        System.out.println(my_double2);
+        char ch1 = 'a';
+        int ch1_num = ch1;
+        System.out.println(ch1_num);
+
+//        char형 알파벳 비교를 위한 묵시적 타입변환이 일어난다.
+        System.out.println('A' > 'a');
+
+        int my_int1 = 10;
+//        int -> double
+        double my_double1 = my_int1;
+        System.out.println(my_double1);
+//        에러 발생 : my_int1 = my_double1;
+//        double -> int 명시적 타입은 가능 : 소수점값 손실발생 가능성이 있다.
+        my_int1 = (int) my_double1;
+        double my_double2 =  7.2f;
+        System.out.println(my_double2);
 //
 ////        명시적 타입변환
 //        char my_char2 = 'b';
@@ -92,21 +96,17 @@ public class C02Variable {
 //        변수와 상수
 //        선언과 동시에 초기화
 //        자료형은 첫 선언할때만 사용하면 된다.
-        int a1 = 10;
-//        변수값 변경
-        a1 = 20;
-//        선언만 한뒤에 나중에 초기화
-        int a2; // 선언만 됐을때는 값이 0으로 초기화
-        a2 = 20;
-//        상수는 값의 재할당이 불가능
-        final int AGES = 20;
-//        상수는 값의 변경이 불가능 -> AGES = 30; 에러발생
-//        상수는 선언만 한 뒤에 나중에 초기화 하는 방식이 java8이전에는 안됐었지만, 이후 가능해짐.
-        final int AGES2;
-        AGES2 = 20;
-
-
-
-
+//        int a1 = 10;
+////        변수값 변경
+//        a1 = 20;
+////        선언만 한뒤에 나중에 초기화
+//        int a2; // 선언만 됐을때는 값이 0으로 초기화
+//        a2 = 20;
+////        상수는 값의 재할당이 불가능
+//        final int AGES = 20;
+////        상수는 값의 변경이 불가능 -> AGES = 30; 에러발생
+////        상수는 선언만 한 뒤에 나중에 초기화 하는 방식이 java8이전에는 안됐었지만, 이후 가능해짐.
+//        final int AGES2;
+//        AGES2 = 20;
     }
 }

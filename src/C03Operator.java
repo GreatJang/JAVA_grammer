@@ -48,28 +48,32 @@ public class C03Operator {
 //        System.out.println(char1 == char2); //flase
 //        System.out.println(char1 != char2); //true
 
-//        논리연산자 : &&, ||, !
-        int num1 = 10; int num2=20;
-        boolean result1, result2;
-//        result1에 num1이 5보다 큰지 조건과 num1 20보다 작은지 조건을 and 조건을 통해 boolean값 담기
-        result1 = (num1 > 5) && (num1 < 20);
-        System.out.println(result1);
-//        result2에 num2가 10보다 작은 조건과 num2가 30보다 작은 조건을 or조건을 통해 boolean값 담기
-        result2 = (num2 < 10) || (num2 < 30);
-        System.out.println(result2);
-//        result1, result2 각각 출력
-//        result2에 !달아서 출력
-        System.out.println(!result2);
+////        논리연산자 : &&, ||, !
+//        int num1 = 10; int num2=20;
+//        boolean result1, result2;
+////        result1에 num1이 5보다 큰지 조건과 num1 20보다 작은지 조건을 and 조건을 통해 boolean값 담기
+//        result1 = (num1 > 5) && (num1 < 20);
+//        System.out.println(result1);
+////        result2에 num2가 10보다 작은 조건과 num2가 30보다 작은 조건을 or조건을 통해 boolean값 담기
+//        result2 = (num2 < 10) || (num2 < 30);
+//        System.out.println(result2);
+////        result1, result2 각각 출력
+////        result2에 !달아서 출력
+//        System.out.println(!result2);
 
-//        비트연산자 : &, 각자리의수가 모두 1일경우에만 1
-        System.out.println(2 & 1);
-        System.out.println(2>0 & 3>0);
-        int n1 = 10; int n2 = 20;
-        if(n1>20 && n2<30){
-            System.out.println("조건은 참입니다.");
-        }
+////        비트연산자 : &, 각자리의수가 모두 1일경우에만 1
+//        System.out.println(2 & 1);
+//        System.out.println(2>0 & 3>0);
+//        int n1 = 10; int n2 = 20;
+//        if(n1>20 && n2<30){
+//            System.out.println("조건은 참입니다.");
+//        }
 
-
+//        0000101       0000110
+        int n3 = 5; int n4 = 6;
+        System.out.println(n3 & n4); //4
+        System.out.println(n3 | n4); //7
+        System.out.println(n3 ^ n4); //3 => 000011
 
     }
 }
