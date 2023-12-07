@@ -64,21 +64,55 @@ public class C06String {
 //        System.out.println(mySt3.contains("java"));
 
 //        charAt : 문자열에서 특정 위치(index)의 문자(char)를 리턴
-        String st = "abcdefabaadf";
+//        String st = "abcdefabaadf";
 //        char myChar = st.charAt(1);
 //        System.out.println(myChar);
 
-
-//        반복문, charAt, length를 활용한 st안에 문자 a의 개수
-        int count = 0;
-        for(int i=0; i<st.length(); i ++){
-            if(st.charAt(i) == 'a'){
-                count ++;
-            }
-        }
-        System.out.println("문자 a의 개수는 " + count + " 입니다.");
+////        반복문, charAt, length를 활용한 st안에 문자 a의 개수
+//        int count = 0;
+//        for(int i=0; i<st.length(); i ++){
+//            if(st.charAt(i) == 'a'){
+//                count ++;
+//            }
+//        }
+//        System.out.println("문자 a의 개수는 " + count + " 입니다.");
 
 //        substring(a,b) : a이상 b미만의 index를 자른다.
+//        String str1 = "hello world";
+//        System.out.println(str1.substring(0,5));
+//        System.out.println(str1.substring(6,str1.length()));
+
+////        프로그래머스 가운데 글자 가져오기
+////        s="abcde" => "c"
+////        s="qwer" => "we"
+//
+//        String s = "qwer";
+//        if(s.length() % 2 == 1) {
+//            System.out.println(s.substring(s.length() / 2, s.length() / 2 + 1));
+//        } else {
+//            System.out.println(s.substring(s.length() / 2 - 1, s.length() / 2 + 1));
+//        }
+
+////        trim, strip
+//        String trimSt = "    hello world   ";
+//        String new_trimSt = trimSt.trim();
+//        String stripSt = trimSt.strip();
+//        System.out.println(new_trimSt);
+//        System.out.println(stripSt);
+
+
+////        toUppercase : 대문자, toLowercase : 소문자
+//        String a = "Hello";
+//        String a1 = a.toUpperCase();
+//        String a2 = a.toLowerCase();
+//        System.out.println(a1);
+//        System.out.println(a2);
+
+//        문자열 더하기 +=
+        String a = "hello";
+        a += "wolrd";
+        System.out.println(a);
+
 
 
 

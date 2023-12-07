@@ -1,3 +1,26 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class test {
+    public static void main(String[] args) {
+
+        String my_string = "aAb1B2cC34oOp";
+
+
+//        int answer = 0;
+//        return answer;
+
+
+
+
+
+
+    }
+}
+
+
+
+
 //class Solution {
 //    public String solution(String my_string, int n) {
 //        String answer = "";
