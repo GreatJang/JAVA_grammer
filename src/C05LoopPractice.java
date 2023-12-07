@@ -35,21 +35,10 @@ public class C05LoopPractice {
 //            }
 //        }
 //        System.out.println(maxNum);
-//
+
+//        최소공배수 구하기
 //        int minNum = a/maxNum * b/maxNum * maxNum;
 //        System.out.println(minNum);
-
-
-
-//        int a = 24; int b = 36;
-//        int answer =0;
-//        for(int i = 1; i <=24; i++){
-//            answer = a / i;
-//            if(36 % answer == 0){
-//                System.out.println(answer);
-//            }
-//
-//        }
 
 ////        라벨문 활용1
 ////        1) target이 matrix에 i,j번째 배열에 있는지 출력

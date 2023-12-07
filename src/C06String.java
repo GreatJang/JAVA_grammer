@@ -112,7 +112,7 @@ public class C06String {
 
 ////        문자열 더하기 +=
 //        String a = "hello";
-//        a += "wolrd";
+//        a += "world";
 //        System.out.println(a);
 //
 ////        char -> String 형변환
