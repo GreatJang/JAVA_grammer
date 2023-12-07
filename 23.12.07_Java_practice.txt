@@ -33,3 +33,23 @@ Wrapper클래스
     - 클래스에서 정의한 다양한 기능들을 추가적으로 사용하기 위해 원시 자료형을 Wrapping한 클래스가 나오게 되었다.
     - 사용예시
         - Integer.toString(), Integer.parseInt()등
+
+
+⭐자료형 - String
+- 문자열 자료형
+- 사용방법
+    - 리터럴 방식
+        - String a = "Happy Java";
+    - 객체 사용 방식
+        - String a = new String("Happy Java");
+- 객체 사용방식과 리터럴 방식의 메모리저장 차이
+    - 객체사용방식은 힙메모리에 데이터 저장
+    - 리터럴 방식의 경우 문자열 상수풀이라는 특별한 공간에 저장
+- 리터럴 방식을 사용하는 것이 최적화에 도움
+- String 객체 비교시 .equals 사용하기
+
+- equals
+    - ture / false 리턴
+    -
+
+
