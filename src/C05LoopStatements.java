@@ -122,14 +122,18 @@ public class C05LoopStatements {
 //            }
 //        }
 
-//        2중 for문을 통해 배열접근
-        int[][] arr = {{1,2,3,4}, {5,6,7,8}};
-
-        for(int i = 0; i< arr.length; i++){
-            for(int a = 0; a< arr[i].length; a++){
-                System.out.println(arr[i][a]);
+//        라벨문 : 첫번째 for문 0~4까지, 2번째 for문 0~4까지, 2번째
+        loop1:
+        for(int i=0; i<5; i++){
+            loop2:
+            for(int j=0; j<5; j++){
+                System.out.println("hello world");
+                if(j==2){
+                    break loop1; //break; 하는것과 비교
+                }
             }
         }
+
 
 
 

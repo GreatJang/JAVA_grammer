@@ -60,23 +60,23 @@ public class C02Variable {
 //            System.out.println("조건식이 참 입니다.");
 //        }
 
-//        묵시적 타입변환
-        char ch1 = 'a';
-        int ch1_num = ch1;
-        System.out.println(ch1_num);
-
-//        char형 알파벳 비교를 위한 묵시적 타입변환이 일어난다.
-        System.out.println('A' > 'a');
-
-        int my_int1 = 10;
-//        int -> double
-        double my_double1 = my_int1;
-        System.out.println(my_double1);
-//        에러 발생 : my_int1 = my_double1;
-//        double -> int 명시적 타입은 가능 : 소수점값 손실발생 가능성이 있다.
-        my_int1 = (int) my_double1;
-        double my_double2 =  7.2f;
-        System.out.println(my_double2);
+////        묵시적 타입변환
+//        char ch1 = 'a';
+//        int ch1_num = ch1;
+//        System.out.println(ch1_num);
+//
+////        char형 알파벳 비교를 위한 묵시적 타입변환이 일어난다.
+//        System.out.println('A' > 'a');
+//
+//        int my_int1 = 10;
+////        int -> double
+//        double my_double1 = my_int1;
+//        System.out.println(my_double1);
+////        에러 발생 : my_int1 = my_double1;
+////        double -> int 명시적 타입은 가능 : 소수점값 손실발생 가능성이 있다.
+//        my_int1 = (int) my_double1;
+//        double my_double2 =  7.2f;
+//        System.out.println(my_double2);
 //
 ////        명시적 타입변환
 //        char my_char2 = 'b';
@@ -99,9 +99,13 @@ public class C02Variable {
 //        int a1 = 10;
 ////        변수값 변경
 //        a1 = 20;
-////        선언만 한뒤에 나중에 초기화
-//        int a2; // 선언만 됐을때는 값이 0으로 초기화
-//        a2 = 20;
+//        선언만 한뒤에 나중에 초기화
+        int a2; //지역변수는 선언만 됐을때는 값이 0으로 초기화되지 않으나, 객체로 선언될때는 0으로 초기화
+        a2 = 20;
+//        객체로 만들때는 0으로 초기화
+        int[] arr = new int[5];
+        System.out.println(arr[0]);
+
 ////        상수는 값의 재할당이 불가능
 //        final int AGES = 20;
 ////        상수는 값의 변경이 불가능 -> AGES = 30; 에러발생
