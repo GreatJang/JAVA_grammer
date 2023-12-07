@@ -6,6 +6,30 @@
     - 기본형변수는 기본형의 타입에 맞게 초기화(ex - int 0, boolean false)
     - 참조형 데이터(ex - String)은 null로 초기화
 
-1개 클래스(기능집합) -> 메서드 n개
-클래스 -> 복제본(객체) : new 클래스명
-배열,
+⭐참조 자료형
+- Java에서 기본(원시) 자료형을 제외한 자료형은 "참조 자료형"이라고 한다.
+    - 원시 자료형은 Java에서 제공하는 기본 데이터 타입
+    - int, long, double, float, boolean, char
+- 대표적인 참조 자료형은 String, Lust, Set, Map, 배열등
+    - 참조자료형은 클래스 이고 객체이다.
+- wrapper 클래스
+
+⭐원시 타입(primitive)과 참조타입의 차이
+- 원시 자료형 변수는 new 키워드 없이 리터럴(literal)로만 값을 세팅
+    - 참조형 변수는 new 키워드를 사용하여 값 세팅
+    - String은 리터럴 표현식을 사용할 수 있도록 자바에서 특별 대우 해주는 참조자료형
+        - 그외에도 배열, wrapper클래스도 리터럴 세팅 가능(자동 형변환)
+- 원시 자료형의 비교시에는 값 자체를 비교
+    - 참조형 변수는 객체주소를 비교함으로서 동일한 객체인지를 비교
+
+== : 원시자료형
+String a = "hello";
+String b = "hello";
+a == b => 예외
+a.equal(b) => a위치로 가서 hello 값 가져옴, b위치로 가서 hello 값 가져와서 a, b의 값 비교
+
+Wrapper클래스
+- 원시자료형의 Wrapper 클래스
+    - 클래스에서 정의한 다양한 기능들을 추가적으로 사용하기 위해 원시 자료형을 Wrapping한 클래스가 나오게 되었다.
+    - 사용예시
+        - Integer.toString(), Integer.parseInt()등

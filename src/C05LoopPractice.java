@@ -73,26 +73,36 @@ public class C05LoopPractice {
 //        불필요한 추가 반복 -> 라벨문
 //        1)바깥 for문 : 1~20반복
 //        2)안쪽 for문 : 약수찾기 for문
-        int answer =0;
+//        int answer = 0;
+//        for(int i=0; i<21; i++){
+//            int count =0;
+//            for(int j=1; j<=i; j++){
+//                if(i % j == 0){
+//                    count ++;
+//                }
+//            }
+//            if(count >= 5){
+//                answer = i;
+//                System.out.println(answer);
+//                break;
+//            }
+//        }
+
+//        라벨문 적용
+        int answer = 0;
+        l1:
         for(int i=0; i<21; i++){
-            int count =0;
+            int count = 0;
             for(int j=1; j<=i; j++){
                 if(i % j == 0){
                     count ++;
                 }
-            }
-            if(count >=5){
-                answer = i;
-                System.out.println(answer);
-                break;
+                if(count == 5){
+                    answer = i;
+                    break l1;
+                }
             }
         }
-
-
-
-
-
-
-
+        System.out.println(answer);
     }
 }
