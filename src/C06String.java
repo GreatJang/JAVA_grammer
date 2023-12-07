@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class C06String {
     public static void main(String[] args) {
@@ -64,15 +66,15 @@ public class C06String {
 //        System.out.println(mySt3.contains("java"));
 
 //        charAt : 문자열에서 특정 위치(index)의 문자(char)를 리턴
-//        String st = "abcdefabaadf";
+        String st = "abcdefabaadf";
 //        char myChar = st.charAt(1);
 //        System.out.println(myChar);
 
 ////        반복문, charAt, length를 활용한 st안에 문자 a의 개수
-//        int count = 0;
-//        for(int i=0; i<st.length(); i ++){
-//            if(st.charAt(i) == 'a'){
-//                count ++;
+        int count = 0;
+        for (int i = 0; i < st.length(); i++) {
+            if (st.charAt(i) == 'a') {
+                count++;
 //            }
 //        }
 //        System.out.println("문자 a의 개수는 " + count + " 입니다.");
@@ -108,14 +110,101 @@ public class C06String {
 //        System.out.println(a1);
 //        System.out.println(a2);
 
-//        문자열 더하기 +=
-        String a = "hello";
-        a += "wolrd";
-        System.out.println(a);
+////        문자열 더하기 +=
+//        String a = "hello";
+//        a += "wolrd";
+//        System.out.println(a);
+//
+////        char -> String 형변환
+//        char ch1 = 'a';
+//        String st1 = Character.toString(ch1);
+
+//        String str = "01abc123한글123";
+////        알파벳만 빼고 문자를 str2에 새롭게 담기.
+//        String str2 = " ";
+//        for(int i=0; i<str.length(); i++){
+//            char temp = str.charAt(i);
+//            if(temp < 'a' || temp > 'z'){
+//                str2 += Character.toString(temp);
+//            }
+//        }
+//        System.out.println(str2);
+
+//        특정 문자 제거하기 - 프로그래머스
+
+////        replace(a,b) : a문자를 b문자로 대체
+//        String st1 = "hello world";
+//        String st2 = st1.replace("world", "java");
+//        System.out.println(st2);
+////        replaceAll(a,b)
+//        String st3 = st1.replaceAll("world", "python");
+//        System.out.println(st3);
 
 
+//        String str = "01ZZabc1FF23한글123";
+////        [a-z] : 소문자 알파벳
+//        String str2 = str.replaceAll("[a-z]", "");
+//        System.out.println(str2);
+////        [가-힣] : 한글
+//        String str3 = str.replaceAll("[가-힣]", "");
+//        System.out.println(str3);
+////        [0-9] : 숫자
+//        String str4 = str.replaceAll("[0-9]", "");
+//        System.out.println(str4);
+////        [A-Za-z] : 알파벳 전체
+//        String str5 = str.replaceAll("[A-Za-z]", "");
+//        System.out.println(str5);
+////        [A-Za-z0-9] : 알파벳 전체와 숫자
+//        String str6 = str.replaceAll("[A-Za-z0-9]", "");
+//        System.out.println(str6);
+
+////        Pattern클래스
+//        boolean matcher = Pattern.matches("[a-z]","helloworld");
+//        System.out.println(matcher);
+
+////        전화번호 검증
+////        \d:숫자, {}:연속으로
+//        boolean matcher2 = Pattern.matches("^\\d{3}-\\d{4}-\\d{4}$","010-123-1234");
+//        System.out.println(matcher2);
+
+////        이메일 검증
+////        \d:숫자, {}:연속으로
+//        boolean matcher3 = Pattern.matches("^[a-z0-9]+@[a-z]+.com$","hello@naver.com");
+//        System.out.println(matcher3);
+
+////        split
+//        String a = "a:b:c:d";
+//        String[] stArr = a.split(":");
+//        System.out.println(Arrays.toString(stArr));
+//
+//        String b = "a  b c d";
+//        String[] stArr2 = b.split(" ");
+//        System.out.println(Arrays.toString(stArr2));
+//        String[] stArr3 = b.split("\\s+");
+//        System.out.println(Arrays.toString(stArr3));
+
+////        isEmpty와 null구분
+//        String st1 = null;
+//        String st2 = "";
+//
+//        System.out.println(st1==null);
+//        System.out.println(st2==null);
+//        System.out.println(st2.isEmpty());
+////        비어있는 것과 null은 다르다.
+////        없는 값을 가지고 메서드를 사용하려고 해서 에러 : NullPointerException 예외 발생.
+//        System.out.println(st1.isEmpty());
+//
+//        String[] arr = new  String[5];
+//        arr[0] = "hello";
+//        arr[1] = "world";
+////        선언만 해놓은 상태에는 2,3,4은 null이다.
+////        null인 없는 값에 연산을 하려고 하는 것 자체가 에러.
+//        for(int i=0; i<arr.length; i++){
+//            System.out.println(arr[i].length());
+//        }
 
 
-
+            }
+        }
     }
 }
