@@ -283,19 +283,19 @@ public class test {
 //            }
 //        }
 
-//        for문
-        String A = "abc"; String B = "bca";
-        int answer = -1; // answer -1로 시작
-        StringBuilder sb = new StringBuilder(A);
-        for(int i=0; i<A.length(); i++){
-            if(sb.toString().equals(B)){
-                answer = i;
-                break;
-            }
-            sb.insert(0, sb.charAt(sb.length()-1)); //5번 돌았을 때 까지 B와 안맞으면 answer = -1로 초기화
-            sb.delete(sb.length()-1, sb.length());
-        }
-        System.out.println(answer);
+////        for문
+//        String A = "abc"; String B = "bca";
+//        int answer = -1; // answer -1로 시작
+//        StringBuilder sb = new StringBuilder(A);
+//        for(int i=0; i<A.length(); i++){
+//            if(sb.toString().equals(B)){
+//                answer = i;
+//                break;
+//            }
+//            sb.insert(0, sb.charAt(sb.length()-1)); //5번 돌았을 때 까지 B와 안맞으면 answer = -1로 초기화
+//            sb.delete(sb.length()-1, sb.length());
+//        }
+//        System.out.println(answer);
 
 
 
@@ -314,6 +314,15 @@ public class test {
 //            if(B == d){
 //                System.out.println(1);
 //            } if
+
+        String cipher = "dfjardstddetckdaccccdegk";
+        int code = 4;
+            String answer = "";
+            for(int i=0; i<cipher.length(); i++){
+                if(cipher.charAt(i) == cipher.length(i)){
+
+                }
+            }
 
 
 
