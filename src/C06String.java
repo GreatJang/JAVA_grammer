@@ -23,6 +23,7 @@ public class C06String {
 ////        ⭐String과 int의 형변환 외워야함
 //        int a = 10;
 //        String st_a = Integer.toString(a); // "10"
+//        String st_a2 = String.valueOf(a);
 //        int c = Integer.parseInt(st_a); // 10
 //
 ////        ⭐참조자료형에 원시자료형을 담을 때는 Wrapper 클래스를 써야한다. ex)컬렉션 프레임워크(List, set ...)
@@ -75,8 +76,8 @@ public class C06String {
         for (int i = 0; i < st.length(); i++) {
             if (st.charAt(i) == 'a') {
                 count++;
-//            }
-//        }
+            }
+        }
 //        System.out.println("문자 a의 개수는 " + count + " 입니다.");
 
 //        substring(a,b) : a이상 b미만의 index를 자른다.
@@ -204,7 +205,32 @@ public class C06String {
 //        }
 
 
-            }
-        }
+//        String[] 배열명 = {"a", "b", "c"};
+//        => 1)배열선언 2)랭귀지 나열 3) join: 공백하나로 4) 출력
+//        String.join(구분자, 배열명);
+
+////        join : String[] -> String
+//        String[] arr = {"java", "python", "C++", "javascript"};
+//        String arrSt = String.join(" ", arr);
+//        System.out.println(arrSt);
+
+////        StringBuffer
+////        출력시 StringBuffer 타입이므로 string으로 변경해주어야 한다.
+//        StringBuffer sb1 = new StringBuffer("hello");
+//        System.out.println(sb1);
+//        sb1.append(" world");
+//        System.out.println(sb1);
+//        sb1.insert(6,"java ");
+//        System.out.println(sb1);
+//
+//        System.out.println(sb1.substring(6,10));
+//        sb1.delete(6,10);
+//        System.out.println(sb1);
+
+//        성능 : String < StringBuffer < StringBuilder(스레드 safe X)
+        StringBuilder sb2 = new StringBuilder("hello");
+        sb2.append("world");
+        System.out.println(sb2);
+
     }
 }
