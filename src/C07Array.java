@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class C07Array {
@@ -82,6 +84,24 @@ public class C07Array {
 //            arr[arr.length-1-i] = temp;
 //        }
 //        System.out.println(Arrays.toString(arr));
+
+//        ⭐정렬 : sort() 함수 사용
+        int[] arr = {5,1,2,7,3,1,2};
+//        오름차순정렬이 기본
+        Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr));
+
+//        내림차순
+//        방법1.Comparator클래스 사용
+//        객체타입인 경우에만 Comparactor클래스 사용 가능
+        String[] st_arr = {"hello", "hi", "bye", "goodmorning"};
+        Arrays.sort(st_arr); // 문자 정렬도 가능
+        System.out.println(Arrays.toString(st_arr));
+//        방법2.배열 뒤집기
+        Arrays.sort(st_arr, Comparator.reverseOrder());
+        System.out.println(Arrays.toString(st_arr));
+
+
 
 
 
