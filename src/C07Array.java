@@ -1,3 +1,5 @@
+import com.sun.jdi.connect.AttachingConnector;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -97,19 +99,33 @@ public class C07Array {
         String[] st_arr = {"hello", "hi", "bye", "goodmorning"};
         Arrays.sort(st_arr); // 문자 정렬도 가능
         System.out.println(Arrays.toString(st_arr));
-//        방법2.배열 뒤집기
+
         Arrays.sort(st_arr, Comparator.reverseOrder());
         System.out.println(Arrays.toString(st_arr));
 
+//        Comparator클래스는 기본형 타입은 처리불가
+//        Arrays.sort(arr, Comparator.reverseOrder());
+//        기본형은 Integer로 변경해서 사용해야함
+//        Integer[] arr_integer = {5,1,2,7,3,1,2};
+//        Arrays.sort(arr_integer, Comparator.reverseOrder());
+//        System.out.println(Arrays.toString(arr_integer));
 
 
+//        방법2.배열 뒤집기
+        for(int i=0; i<arr.length/2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+        System.out.println(Arrays.toString(arr));
 
-
-
-
-
-
-
+//        ⭐StreamApi, lambda를 활용한 내림차순 정렬 // 많이 사용함 달달외우는 것보다 이렇게도 할 수 있다 인지하기.
+        int[] arr2 = {5,1,2,7,3,1,2};
+        int[] new_arr2 = Arrays.stream(arr2) //arr2를 대상으로 stream객체 생성하는 문법
+                                            .boxed() //Integer로 형변환 한 스트링객체생성
+                                            .sorted(Comparator.reverseOrder()) //내림차순정렬
+                                            .mapToInt(a->a) //Integer를 int로 변환
+                                            .toArray(); //배열로 변환
     }
 }
 
