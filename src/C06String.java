@@ -25,7 +25,7 @@ public class C06String {
 //        String st_a = Integer.toString(a); // "10"
 //        int c = Integer.parseInt(st_a); // 10
 //
-////        참조자료형에 원시자료형을 담을 때는 Wrapper 클래스를 써야한다. ex)컬렉션 프레임워크(List, set ...)
+////        ⭐참조자료형에 원시자료형을 담을 때는 Wrapper 클래스를 써야한다. ex)컬렉션 프레임워크(List, set ...)
 ////        사용하는 이유는 다양한 기능을 사용하기 위해
 //        List<Integer> list_a = new ArrayList<>();
 //        list_a.add(10);
@@ -172,7 +172,7 @@ public class C06String {
 //        boolean matcher3 = Pattern.matches("^[a-z0-9]+@[a-z]+.com$","hello@naver.com");
 //        System.out.println(matcher3);
 
-////        split
+////        split : 리턴값은 String 배열
 //        String a = "a:b:c:d";
 //        String[] stArr = a.split(":");
 //        System.out.println(Arrays.toString(stArr));

@@ -5,6 +5,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class test {
     public static void main(String[] args) {
@@ -205,9 +206,54 @@ public class test {
 //        }
 //        System.out.println(str2);
 
-//        replace(a,b) : a문자를 b문자로 대체
-        String st1 = "hello world";
-        String st2 = st1.replace
+////        replace(a,b) : a문자를 b문자로 대체
+//        String st1 = "hello world";
+//        String st2 = st1.replace("world", "java");
+//        System.out.println(st2);
+//
+////        replaceAll(a,b)
+//        String st3 = st1.replaceAll("world", "python");
+//        System.out.println(st3);
+
+//        String str = "01ZZabc1FF23한글123";
+////        [a-z] : 소문자 알파벳
+//        String str2 = str.replaceAll("[a-z]", "");
+//        System.out.println(str2);
+////        [가-힣] : 한글
+//        String str3 = str.replaceAll("[가-힣]", "");
+//        System.out.println(str3);
+////        [0-9] : 숫자
+//        String str4 = str.replaceAll("[0-9]", "");
+//        System.out.println(str4);
+////        [A-Za-z] : 알파벳 전체
+//        String str5 = str.replaceAll("[A-Za-z]", "");
+//        System.out.println(str5);
+////        [A-Za-z0-9] : 알파벳 전체와 숫자
+//        String str6 = str.replaceAll("[A-Za-z0-9]", "");
+//        System.out.println(str6);
+
+////        Pattern 클래스
+//        boolean matcher = Pattern.matches("[a-z]", "helloworld");
+//        System.out.println(matcher);
+
+////        isEmpty와 null구분
+//        String st1 = null;
+//        String st2 = "";
+//
+//        System.out.println(st1==null);
+//        System.out.println(st2==null);
+//        System.out.println(st2.isEmpty());
+////        없는 값을 가지고 메서드를 사용하려고 해서 에러 : NullPointerException
+//        System.out.println(st1.isEmpty());
+
+//        String[] arr = new String[5];
+//        arr[0] = "hello";
+//        arr[1] = "world";
+////        선언만 해놓은 상태에는 2,3,4는 null이다.
+////        null인 없는 값에 연산을 하려고 하는 것 자체가 에러.
+//        for(int i=0; i<arr.length; i ++){
+//            System.out.println(arr[i].length());
+//        }
 
 
 
