@@ -256,6 +256,65 @@ public class test {
 //        }
 
 
+//        int n = 3; int[] numlist = {4, 5, 6, 7, 8, 9, 10, 11, 12};
+//
+//            int[] answer = {numlist.length};
+//            for(int i=0; i<numlist.length; i++) {
+//                for (int a = 1; a < 100000; a++) {
+//                    if (numlist[i] == n * a) {
+//                        answer = new int[]{numlist[i]};
+//                    }
+//                }
+//            }
+//            return answer;
+
+//        프로그래머스 문자열 밀기
+//        while문
+//        String A = "hello"; String B = "ohell";
+//        int answer = 0;
+//        StringBuilder sb = new StringBuilder(A);
+//        while(!sb.toString().equals(B)){
+//            answer ++;
+//            sb.insert(0, sb.charAt(sb.length()-1));
+//            sb.delete(sb.length()-1, sb.length());
+//            if(answer>A.length()){
+//                answer = -1;
+//                break;
+//            }
+//        }
+
+//        for문
+        String A = "abc"; String B = "bca";
+        int answer = -1; // answer -1로 시작
+        StringBuilder sb = new StringBuilder(A);
+        for(int i=0; i<A.length(); i++){
+            if(sb.toString().equals(B)){
+                answer = i;
+                break;
+            }
+            sb.insert(0, sb.charAt(sb.length()-1)); //5번 돌았을 때 까지 B와 안맞으면 answer = -1로 초기화
+            sb.delete(sb.length()-1, sb.length());
+        }
+        System.out.println(answer);
+
+
+
+//        String A = "hello"; String B = "ohell";
+//        String b = "";
+//        for(int i=0; i<A.length(); i++){
+//            StringBuilder a = new StringBuilder(A);
+//            b = a.substring(a.length()-1, a.length());
+//            a.delete(a.length()-1, a.length());
+//            a.insert(0, b);
+//            if(a == B){
+
+//            }
+//        }
+//        System.out.println(a);
+//            if(B == d){
+//                System.out.println(1);
+//            } if
+
 
 
     }

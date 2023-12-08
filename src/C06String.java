@@ -214,18 +214,18 @@ public class C06String {
 //        String arrSt = String.join(" ", arr);
 //        System.out.println(arrSt);
 
-////        StringBuffer
-////        출력시 StringBuffer 타입이므로 string으로 변경해주어야 한다.
-//        StringBuffer sb1 = new StringBuffer("hello");
-//        System.out.println(sb1);
-//        sb1.append(" world");
-//        System.out.println(sb1);
-//        sb1.insert(6,"java ");
-//        System.out.println(sb1);
-//
-//        System.out.println(sb1.substring(6,10));
-//        sb1.delete(6,10);
-//        System.out.println(sb1);
+//        StringBuffer
+//        출력시 StringBuffer 타입이므로 string으로 변경해주어야 한다.
+        StringBuffer sb1 = new StringBuffer("hello");
+        System.out.println(sb1);
+        sb1.append(" world");
+        System.out.println(sb1);
+        sb1.insert(6,"java ");
+        System.out.println(sb1);
+
+        System.out.println(sb1.substring(6,10));
+        sb1.delete(6,10);
+        System.out.println(sb1);
 
 //        성능 : String < StringBuffer < StringBuilder(스레드 safe X)
         StringBuilder sb2 = new StringBuilder("hello");

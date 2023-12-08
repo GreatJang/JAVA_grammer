@@ -32,3 +32,6 @@ String a = “hello”;
         - 싱글스레드에서는 동기화에 대한 추가로직이 필요치 않으므로
     - 그러나, 멀티스레드 상황에서 동기화 문제가 발생
         - StringBuffer Thread-Safe (내부적으로 동기화 처리 - synchronized)
+
+- 자료형 배열(Array)
+    -
