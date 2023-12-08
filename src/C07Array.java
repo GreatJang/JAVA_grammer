@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.regex.Pattern;
 
 public class C07Array {
     public static void main(String[] args) {
@@ -15,6 +16,16 @@ public class C07Array {
 //        int[] int_arr3 = new int[]{1,2,3,4};
 //        표현식4는 불가 : java의 배열은 반드시 길이가 지정되어야함.
 //        int[] int_arr4 = new int[];
+
+//        String[] arr_st = new String[5]; // null 값 세팅
+//        for(int i=0; i<arr_st.length; i++){ // ⭐String은 null 값 가지고 뭘 하지 말라고 함. NullPointerException 에러
+//        에러나면 그 부분에서 런닝이 멈춰버리기 때문에 나중에 예외처리도 배울예정
+//            if(arr_st[i].isEmpty()){
+//                System.out.println("비어있습니다.");
+//            }
+//        }
+
+
 
 ////        85, 65, 90 인 int 배열을 선언한 뒤, 총합, 평균값/
 //        int[] int_arr = {85,65,90};
@@ -45,15 +56,32 @@ public class C07Array {
 //        arr[1] = temp;
 //        System.out.println(Arrays.toString(arr));
 
-//        0번째 index부터 마지막까지 자리 change
-        int[] arr2 = {10,20,30,40,50,60,70};
-        for(int i=0; i<arr2.length-1; i++){ // 10이 뒤로 가는데 까지 6번 자리가 바뀌어야 한다. .length에 -1을 하지 않으면
-//            배열의 길이에 맞지 않게 for문이 돌기 때문에 에러가 난다. // ArrayIndexOutOfBoundsException 에러
-            int temp = arr2[i];
-            arr2[i] = arr2[i+1];
-            arr2[i+1] = temp;
-        }
-        System.out.println(Arrays.toString(arr2));
+////        0번째 index부터 마지막까지 자리 change
+//        int[] arr2 = {10,20,30,40,50,60,70};
+//        for(int i=0; i<arr2.length-1; i++){ // 10이 뒤로 가는데 까지 6번 자리가 바뀌어야 한다. .length에 -1을 하지 않으면
+////            배열의 길이에 맞지 않게 for문이 돌기 때문에 에러가 난다. // ArrayIndexOutOfBoundsException 에러
+//            int temp = arr2[i];
+//            arr2[i] = arr2[i+1];
+//            arr2[i+1] = temp;
+//        }
+//        System.out.println(Arrays.toString(arr2));
+
+//        배열 뒤집기
+//        int[] arr = {1, 2, 3, 4, 5}; // arr 0번째는 arr2의 length-1번째에 넣기 ~
+//        신규배열 선언 : arr2
+//        int[] arr2 = new int[arr.length]; // 배열은 길이를 먼저 확정해줘야 한다.
+//        for (int i=0; i<arr.length; i++) {
+//            arr2[arr2.length-1-i] = arr[i];
+//        }
+//        System.out.println(Arrays.toString(arr2));
+
+////        배열 뒤집기2
+//        for(int i=0; i<arr.length/2; i++){
+//            int temp = arr[i];
+//            arr[i] = arr[arr.length-1-i];
+//            arr[arr.length-1-i] = temp;
+//        }
+//        System.out.println(Arrays.toString(arr));
 
 
 
@@ -64,3 +92,5 @@ public class C07Array {
 
     }
 }
+
+
