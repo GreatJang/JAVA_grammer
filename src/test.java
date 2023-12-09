@@ -317,12 +317,14 @@ public class test {
 
         String cipher = "dfjardstddetckdaccccdegk";
         int code = 4;
-            String answer = "";
-            for(int i=0; i<cipher.length(); i++){
-                if(cipher.charAt(i) == cipher.length(i)){
 
-                }
-            }
+        int k = code -1;
+        String answer = "";
+        char[] arr1 = cipher.toCharArray();
+        for(int i=k; i<cipher.length(); i+=code){
+            answer += arr1[i];
+        }
+        System.out.println(answer);
 
 
 
