@@ -1,10 +1,9 @@
 import com.sun.jdi.connect.AttachingConnector;
 
 import java.lang.module.FindException;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Pattern;
+import java.util.stream.IntStream;
 
 public class C07Array {
     public static void main(String[] args) {
@@ -160,28 +159,114 @@ public class C07Array {
 //            }
 //        }
 
-//        중복제거하기
-        int[] temp = {10,10,40,5,7};
-////        정렬하고 나서 값 하나씩 비교해서 중복제거
-////        배열복사
-//        int[] new_temp = Arrays.copyOfRange(temp,0,3);
-//        System.out.println(Arrays.toString(new_temp));
+////        중복제거하기
+//        int[] temp = {10,10,40,5,7};
+//////        정렬하고 나서 값 하나씩 비교해서 중복제거
+//////        배열복사
+////        int[] new_temp = Arrays.copyOfRange(temp,0,3);
+////        System.out.println(Arrays.toString(new_temp));
+//
+//        Arrays.sort(temp);
+//        int[] new_temp = new int[temp.length];
+//        int index = 0;
+//        for(int i=0; i<temp.length-1; i++){
+//            if(temp[i] != temp[i+1]){
+//                new_temp[index] = temp[i];
+//                index++;
+//            }
+//        }
+////        마지막 자리 체크로직
+//        new_temp[index++] = temp[temp.length-1];
+//
+//        int[] answer = Arrays.copyOfRange(new_temp,0,index);
+//        System.out.println(Arrays.toString(answer));
 
-        Arrays.sort(temp);
-        int[] new_temp = new int[temp.length];
-        int index = 0;
-        for(int i=0; i<temp.length; i++){
-            if(i==temp.length-1){ //마지막 자리 체크로직
-                new_temp[index] = temp[i];
-                index++;
-                break;
-            }
-            if(temp[i] != temp[i+1]){
-                new_temp[index] = temp[i];
-                index++;
-            }
-        }
-        System.out.println(Arrays.toString(new_temp));
+////        프로그래머스 두 개 뽑아서 더하기
+//        int[] numbers = {2,1,3,4,1}; //2,3,4,5,6,7
+//
+//        int[] numbers_combination = new int[numbers.length*numbers.length];
+//        int combination_count = 0;
+//        for(int i=0; i<numbers.length-1; i++){
+//            for(int j=i+1; j< numbers.length; j++){
+//                numbers_combination[combination_count] = numbers[i]+numbers[j];
+//                combination_count++;
+//            }
+//        }
+//        int[] temp = Arrays.copyOfRange(numbers_combination,0,combination_count);
+//        System.out.println(Arrays.toString(temp));
+//        Arrays.sort(temp); // 정렬
+//        int[] new_temp = new int[temp.length]; // 중복제거 시작
+//        int index = 0;
+//        for(int i=0; i<temp.length-1; i++) {
+//            if (temp[i] != temp[i + 1]) {
+//                new_temp[index] = temp[i];
+//                index++;
+//            }
+//        }
+//        new_temp[index++] = temp[temp.length-1];
+//        int[] answer = Arrays.copyOfRange(new_temp,0,index);
+//        System.out.println(Arrays.toString(answer));
+
+
+////        버블정렬
+//        int[] arr = {5,1,4,3,2}; //
+//        for(int i=0; i<arr.length-1; i++){
+//            boolean isChanged = false; // for문이 다 돌기 전에 정렬이 완료 되면 멈추는 로직 추가
+//            for(int j=0; j<arr.length-1-i; j++){
+//                // for문이 j까지 인데 if 절에 j+1이 있으면 무조건 for문에서 배열초과 되기때문에 -1을 해주어야 한다.
+//                if(arr[j]>arr[j+1]){
+//                    int temp = arr[j];
+//                    arr[j] = arr[j+1];
+//                    arr[j+1] = temp;
+//                    isChanged = true; // for문을 돌면 true for문을 돌지 않으면 false
+//                }
+//            }
+//            if(isChanged == false){ // for문을 돌지 않으면 false 이기 때문에 false이면 반복문 종료
+//                break;
+//            }
+//        }
+//        System.out.println(Arrays.toString(arr));
+
+////        배열의 검색
+//        int[] arr = {5,3,1,8,7};
+//        int answer=0;
+//        for(int i=0; i<arr.length; i++){
+//            if(arr[i]==8){
+//                answer=i;
+//                break;
+//            }
+//        }
+//        System.out.println(answer);
+
+//        이진검색(Binary Search) 알고리즘
+//        사전에 오름차순 정렬이 되어 있어야 이진검색 가능.
+//        우리가 구하는 값이 어떤 n을 2로 나누는 값이라면 log2n의 값과 일치 할것
+//        =>시간복잡도가 log2n이다.(n값이 크면 클수록, 복잡도가 굉장히 줄어듬)\
+
+        int[] arr = {1,3,6,8,9,11};
+        int answer = Arrays.binarySearch(arr,8);
+        System.out.println(answer);
+
+//        스트림 api를 활용한 검색
+//        int index = Arrays.stream(arr).filter(a->a==8).findFirst().getAsInt();
+//        System.out.println(index);
+        int index = IntStream.range(0, arr.length)
+                .filter(i -> arr[i] == 8)
+                .findFirst()
+                .orElse(-1);
+        System.out.println(index);
+
+//        배열간 비교 : equals, 순서까지 동일해야 true
+        int[] arr1 = {10,20,30};
+        int[] arr2 = {10,20,30};
+
+
+
+
+
+
+
+
 
 
 
