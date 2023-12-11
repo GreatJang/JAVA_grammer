@@ -238,27 +238,93 @@ public class C07Array {
 //        }
 //        System.out.println(answer);
 
-//        이진검색(Binary Search) 알고리즘
-//        사전에 오름차순 정렬이 되어 있어야 이진검색 가능.
-//        우리가 구하는 값이 어떤 n을 2로 나누는 값이라면 log2n의 값과 일치 할것
-//        =>시간복잡도가 log2n이다.(n값이 크면 클수록, 복잡도가 굉장히 줄어듬)\
-
-        int[] arr = {1,3,6,8,9,11};
-        int answer = Arrays.binarySearch(arr,8);
-        System.out.println(answer);
-
-//        스트림 api를 활용한 검색
-//        int index = Arrays.stream(arr).filter(a->a==8).findFirst().getAsInt();
+////        이진검색(Binary Search) 알고리즘
+////        사전에 오름차순 정렬이 되어 있어야 이진검색 가능.
+////        우리가 구하는 값이 어떤 n을 2로 나누는 값이라면 log2n의 값과 일치 할것
+////        =>시간복잡도가 log2n이다.(n값이 크면 클수록, 복잡도가 굉장히 줄어듬)\
+//
+//        int[] arr = {1,3,6,8,9,11};
+//        int answer = Arrays.binarySearch(arr,8);
+//        System.out.println(answer);
+//
+////        스트림 api를 활용한 검색
+////        int index = Arrays.stream(arr).filter(a->a==8).findFirst().getAsInt();
+////        System.out.println(index);
+//        int index = IntStream.range(0, arr.length)
+//                .filter(i -> arr[i] == 8)
+//                .findFirst()
+//                .orElse(-1);
 //        System.out.println(index);
-        int index = IntStream.range(0, arr.length)
-                .filter(i -> arr[i] == 8)
-                .findFirst()
-                .orElse(-1);
-        System.out.println(index);
 
-//        배열간 비교 : equals, 순서까지 동일해야 true
-        int[] arr1 = {10,20,30};
-        int[] arr2 = {10,20,30};
+////        배열간 비교 : equals, 순서까지 동일해야 true //활용도 낮음
+//        int[] arr1 = {10,20,30};
+//        int[] arr2 = {10,20,30};
+//        System.out.println(Arrays.equals(arr1, arr2));
+//
+////        배열복사 : copyOf(배열, end), copyOfRange(배열, start, end) //활용도 낮음
+//        int[] arr = {10,20,30,40,50};
+//        int[] new_arr1 = Arrays.copyOf(arr, 10);
+//        int[] new_arr2 = Arrays.copyOfRange(arr, 1, 4);
+//        System.out.println(Arrays.toString(new_arr1));
+//        System.out.println(Arrays.toString(new_arr2));
+
+////        2차원 배열 할당
+//        int[][] arr = new int[2][3];
+////        {{1,2,3},{4,5,6}}
+//        arr[0][0] = 1;
+//        arr[0][1] = 2;
+//        arr[0][2] = 3;
+//        arr[1][0] = 4;
+//        arr[1][1] = 5;
+//        arr[1][2] = 6;
+//        System.out.println(Arrays.deepToString(arr));
+//
+////        2차원 가변배열 선언 및 할당
+//        int[][] arr2 = new int[3][];
+//        arr2[0] = new int[1];
+//        arr2[1] = new int[2];
+//        arr2[2] = new int[3];
+////        arr2[0][0] = 10; // 전체 사이즈를 지정하지 않고 값만 입력하려고 하면 런타임 에러난다. NullPointerException
+////        arr2[1][0] = 20;
+////        arr2[2][0] = 30;
+//        System.out.println(Arrays.deepToString(arr2)); // 배열안에 배열이 들어가 있으니까 배열주소를 출력한다.
+//
+////        가변배열 리터럴 방식
+//        int[][] arr3 = {{10}, {10,20},{10,20,30}};
+//        System.out.println(Arrays.deepToString(arr3));
+
+////        [3][4] 사이즈의 배열을 선언 한 뒤
+////        1,2,3, ~ 12까지의 숫자값 각 배열에 할당
+//        int[][] arr4 = new int[3][4];
+//        int count = 1;
+//        for(int i=0; i<arr4.length; i++){
+////            int count = 1; //{1,2,3,4}, {1,2,3,4}, {1,2,3,4}
+//            for(int j=0; j<arr4[i].length; j++){
+//                arr4[i][j] = count;
+//                count ++;
+//            }
+////            count++; //1,1,1,1 2,2,2,2 3,3,3,3
+//        }
+//        System.out.println(Arrays.deepToString(arr4));
+
+////        가변배열만들기 : 전체사이즈 5
+////        각 배열마다 사이즈 1,2,3,4,5로 커지도록 : for문
+////        각사이즈별로 1은 10이 모두 들어가고, 2는 20이 모두 들어가고, 3은 30이 모두 들어가도록
+//        int[][] arr5 = new int[5][];
+//        int count = 1;
+//        for(int i=0; i<arr5.length; i++){
+//            arr5[i] = new int[i+1];
+//            for(int j=0; j<arr5[i].length; j++){
+//                arr5[i][j] = count*10;
+//            }
+//            count++;
+//        }
+//        System.out.println(Arrays.deepToString(arr5));
+
+        List<Integer> myList = new ArrayList<>();
+
+
+
 
 
 
