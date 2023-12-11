@@ -29,9 +29,7 @@ public class C07Array {
 //            }
 //        }
 
-
-
-////        85, 65, 90 인 int 배열을 선언한 뒤, 총합, 평균값/
+////        ⭐85, 65, 90 인 int 배열을 선언한 뒤, 총합, 평균값/
 //        int[] int_arr = {85,65,90};
 //        int answer = 0;
 //        for(int i=0; i<int_arr.length; i++){
@@ -40,7 +38,7 @@ public class C07Array {
 //        System.out.println(answer);
 //        System.out.println(answer/int_arr.length);
 
-////        최대값, 최소값
+////        ⭐최대값, 최소값
 //        int[] arr = {10,20,30,12,8,17};
 //        int max = arr[0];
 //        int min = arr[0];
@@ -53,7 +51,7 @@ public class C07Array {
 //            }
 //        }
 
-////        배열의 순서바꾸기 문법
+////        ⭐배열의 순서바꾸기 문법
 //        int[] arr = {10,20};
 //        int temp = arr[0];
 //        arr[0] = arr[1];
@@ -70,7 +68,7 @@ public class C07Array {
 //        }
 //        System.out.println(Arrays.toString(arr2));
 
-//        배열 뒤집기
+//        ⭐배열 뒤집기
 //        int[] arr = {1, 2, 3, 4, 5}; // arr 0번째는 arr2의 length-1번째에 넣기 ~
 //        신규배열 선언 : arr2
 //        int[] arr2 = new int[arr.length]; // 배열은 길이를 먼저 확정해줘야 한다.
@@ -79,7 +77,7 @@ public class C07Array {
 //        }
 //        System.out.println(Arrays.toString(arr2));
 
-////        배열 뒤집기2
+////        ⭐배열 뒤집기2
 //        for(int i=0; i<arr.length/2; i++){
 //            int temp = arr[i];
 //            arr[i] = arr[arr.length-1-i];
@@ -87,21 +85,21 @@ public class C07Array {
 //        }
 //        System.out.println(Arrays.toString(arr));
 
-//        ⭐정렬 : sort() 함수 사용
-        int[] arr = {5,1,2,7,3,1,2};
-//        오름차순정렬이 기본
-        Arrays.sort(arr);
-        System.out.println(Arrays.toString(arr));
+////        ⭐정렬 : sort() 함수 사용
+//        int[] arr = {5,1,2,7,3,1,2};
+////        오름차순정렬이 기본
+//        Arrays.sort(arr);
+//        System.out.println(Arrays.toString(arr));
 
-//        내림차순
-//        방법1.Comparator클래스 사용
-//        객체타입인 경우에만 Comparactor클래스 사용 가능
-        String[] st_arr = {"hello", "hi", "bye", "goodmorning"};
-        Arrays.sort(st_arr); // 문자 정렬도 가능
-        System.out.println(Arrays.toString(st_arr));
-
-        Arrays.sort(st_arr, Comparator.reverseOrder());
-        System.out.println(Arrays.toString(st_arr));
+////        내림차순
+////        방법1.Comparator클래스 사용
+////        객체타입인 경우에만 Comparactor클래스 사용 가능
+//        String[] st_arr = {"hello", "hi", "bye", "goodmorning"};
+//        Arrays.sort(st_arr); // 문자 정렬도 가능
+//        System.out.println(Arrays.toString(st_arr));
+//
+//        Arrays.sort(st_arr, Comparator.reverseOrder());
+//        System.out.println(Arrays.toString(st_arr));
 
 //        Comparator클래스는 기본형 타입은 처리불가
 //        Arrays.sort(arr, Comparator.reverseOrder());
@@ -111,21 +109,59 @@ public class C07Array {
 //        System.out.println(Arrays.toString(arr_integer));
 
 
-//        방법2.배열 뒤집기
-        for(int i=0; i<arr.length/2; i++) {
-            int temp = arr[i];
-            arr[i] = arr[arr.length - 1 - i];
-            arr[arr.length - 1 - i] = temp;
+////        방법2.배열 뒤집기
+//        for(int i=0; i<arr.length/2; i++) {
+//            int temp = arr[i];
+//            arr[i] = arr[arr.length - 1 - i];
+//            arr[arr.length - 1 - i] = temp;
+//        }
+//        System.out.println(Arrays.toString(arr));
+//
+////        ⭐StreamApi, lambda를 활용한 내림차순 정렬 // 많이 사용함 달달외우는 것보다 이렇게도 할 수 있다 인지하기.
+//        int[] arr2 = {5,1,2,7,3,1,2};
+//        int[] new_arr2 = Arrays.stream(arr2) //arr2를 대상으로 stream객체 생성하는 문법
+//                                            .boxed() //Integer로 형변환 한 스트링객체생성
+//                                            .sorted(Comparator.reverseOrder()) //내림차순정렬
+//                                            .mapToInt(a->a) //Integer를 int로 변환
+//                                            .toArray(); //배열로 변환
+
+
+        int [] arr = {30,22,20,25,12};
+
+//        오름차순 선택정렬
+        for(int i=0; i<arr.length; i++){
+            for(int j=i+1; j<arr.length; j++){
+                if(arr[i]>arr[j]){
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
         }
         System.out.println(Arrays.toString(arr));
 
-//        ⭐StreamApi, lambda를 활용한 내림차순 정렬 // 많이 사용함 달달외우는 것보다 이렇게도 할 수 있다 인지하기.
-        int[] arr2 = {5,1,2,7,3,1,2};
-        int[] new_arr2 = Arrays.stream(arr2) //arr2를 대상으로 stream객체 생성하는 문법
-                                            .boxed() //Integer로 형변환 한 스트링객체생성
-                                            .sorted(Comparator.reverseOrder()) //내림차순정렬
-                                            .mapToInt(a->a) //Integer를 int로 변환
-                                            .toArray(); //배열로 변환
+//        내림차순 선택정렬
+        for(int i=0; i<arr.length; i++){
+            for(int j=i+1; j<arr.length; j++){
+                if(arr[i]<arr[j]){
+                    int temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+
+
+
+
+
+
+
+
+
+
+
     }
 }
 
