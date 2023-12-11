@@ -1,5 +1,6 @@
 import com.sun.jdi.connect.AttachingConnector;
 
+import java.lang.module.FindException;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -125,36 +126,62 @@ public class C07Array {
 //                                            .mapToInt(a->a) //Integer를 int로 변환
 //                                            .toArray(); //배열로 변환
 
+//        int [] arr = {30,22,20,25,12};
+//
+////        오름차순 선택정렬
+//        for(int i=0; i<arr.length-1; i++){ // 마지막 자리값은 자기 자신과 비교하는 것이기 때문에 할 필요 없으므로 -1
+//            for(int j=i+1; j<arr.length; j++){
+//                if(arr[i]>arr[j]){
+//                    int temp = arr[i];
+//                    arr[i] = arr[j];
+//                    arr[j] = temp;
+//                }
+//            }
+//        }
+//        System.out.println(Arrays.toString(arr));
+//
+////        내림차순 선택정렬
+//        for(int i=0; i<arr.length-1; i++){ // 마지막 자리값은 자기 자신과 비교하는 것이기 때문에 할 필요 없으므로 -1
+//            for(int j=i+1; j<arr.length; j++){
+//                if(arr[i]<arr[j]){ // 부등호만 바꾸어주면 내림차순 정렬
+//                    int temp = arr[i];
+//                    arr[i] = arr[j];
+//                    arr[j] = temp;
+//                }
+//            }
+//        }
+//        System.out.println(Arrays.toString(arr));
 
-        int [] arr = {30,22,20,25,12};
+////        숫자 조합의 합 : 각기 다른 숫자의 배열이 있을 때 만들어질수 있는 2개의 조합의 합을 출력하라.
+//        int[] int_arr = {10,20,30,40,50,60};
+//        for(int i=0; i<int_arr.length-1; i++){
+//            for(int j=i+1; j< int_arr.length; j++){
+//                System.out.println(int_arr[i] + " + " + int_arr[j] + " = " + (int_arr[i] + int_arr[j]));
+//            }
+//        }
 
-//        오름차순 선택정렬
-        for(int i=0; i<arr.length; i++){
-            for(int j=i+1; j<arr.length; j++){
-                if(arr[i]>arr[j]){
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
-                }
+//        중복제거하기
+        int[] temp = {10,10,40,5,7};
+////        정렬하고 나서 값 하나씩 비교해서 중복제거
+////        배열복사
+//        int[] new_temp = Arrays.copyOfRange(temp,0,3);
+//        System.out.println(Arrays.toString(new_temp));
+
+        Arrays.sort(temp);
+        int[] new_temp = new int[temp.length];
+        int index = 0;
+        for(int i=0; i<temp.length; i++){
+            if(i==temp.length-1){ //마지막 자리 체크로직
+                new_temp[index] = temp[i];
+                index++;
+                break;
+            }
+            if(temp[i] != temp[i+1]){
+                new_temp[index] = temp[i];
+                index++;
             }
         }
-        System.out.println(Arrays.toString(arr));
-
-//        내림차순 선택정렬
-        for(int i=0; i<arr.length; i++){
-            for(int j=i+1; j<arr.length; j++){
-                if(arr[i]<arr[j]){
-                    int temp = arr[j];
-                    arr[j] = arr[i];
-                    arr[i] = temp;
-                }
-            }
-        }
-        System.out.println(Arrays.toString(arr));
-
-
-
-
+        System.out.println(Arrays.toString(new_temp));
 
 
 
