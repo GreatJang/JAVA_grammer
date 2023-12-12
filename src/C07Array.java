@@ -184,7 +184,7 @@ public class C07Array {
 ////        프로그래머스 두 개 뽑아서 더하기
 //        int[] numbers = {2,1,3,4,1}; //2,3,4,5,6,7
 //
-//        int[] numbers_combination = new int[numbers.length*numbers.length];
+//        int[] numbers_combination = new int[numbers.length*numbers.length]; // 두개 뽑아서 더하는 로직 시작 // numbers_combination 배열 크기 넓게 시작
 //        int combination_count = 0;
 //        for(int i=0; i<numbers.length-1; i++){
 //            for(int j=i+1; j< numbers.length; j++){
@@ -192,7 +192,7 @@ public class C07Array {
 //                combination_count++;
 //            }
 //        }
-//        int[] temp = Arrays.copyOfRange(numbers_combination,0,combination_count);
+//        int[] temp = Arrays.copyOfRange(numbers_combination,0,combination_count); // 새로운 int배열 생성해서 copyOfRange로 필요한 값만 잘라서 넣기
 //        System.out.println(Arrays.toString(temp));
 //        Arrays.sort(temp); // 정렬
 //        int[] new_temp = new int[temp.length]; // 중복제거 시작
@@ -203,8 +203,9 @@ public class C07Array {
 //                index++;
 //            }
 //        }
-//        new_temp[index++] = temp[temp.length-1];
-//        int[] answer = Arrays.copyOfRange(new_temp,0,index);
+//        System.out.println(Arrays.toString(new_temp)); // 중복제거를 완료하면 new_temp 빈자리에 0으로 채워짐
+//        new_temp[index++] = temp[temp.length-1]; // 마지막 자리 체크
+//        int[] answer = Arrays.copyOfRange(new_temp,0,index); // 새로운 int배열 생성해서 copyOfRange로 필요한 값만 잘라서 넣기 = 빈자리 0 버리기
 //        System.out.println(Arrays.toString(answer));
 
 
