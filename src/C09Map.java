@@ -113,10 +113,15 @@ public class C09Map {
                 myMap.remove(a);
             }
         }
-        Set<String> answerSet = myMap.keySet();
-        for (String answer : answerSet) {
-            System.out.println(answer);
+        String answer = "";
+        for(String a : myMap.keySet()){
+            answer += a;
         }
+        System.out.println(answer);
+//        Set<String> answerSet = myMap.keySet();
+//        for (String answer : answerSet) {
+//            System.out.println(answer);
+//        }
 
 //        //내 풀이
 //        String[] participant = {"leo", "kiki", "eden"};
