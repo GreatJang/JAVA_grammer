@@ -127,7 +127,7 @@ public class C07Array {
 
 //        int [] arr = {30,22,20,25,12};
 //
-////        오름차순 선택정렬
+////        ⭐오름차순 선택정렬
 //        for(int i=0; i<arr.length-1; i++){ // 마지막 자리값은 자기 자신과 비교하는 것이기 때문에 할 필요 없으므로 -1
 //            for(int j=i+1; j<arr.length; j++){
 //                if(arr[i]>arr[j]){
@@ -154,7 +154,7 @@ public class C07Array {
 ////        숫자 조합의 합 : 각기 다른 숫자의 배열이 있을 때 만들어질수 있는 2개의 조합의 합을 출력하라.
 //        int[] int_arr = {10,20,30,40,50,60};
 //        for(int i=0; i<int_arr.length-1; i++){
-//            for(int j=i+1; j< int_arr.length; j++){
+//            for(int j=i+1; j<int_arr.length; j++){
 //                System.out.println(int_arr[i] + " + " + int_arr[j] + " = " + (int_arr[i] + int_arr[j]));
 //            }
 //        }
@@ -209,7 +209,7 @@ public class C07Array {
 
 
 ////        버블정렬
-//        int[] arr = {5,1,4,3,2}; //
+//        int[] arr = {5,1,4,3,2};
 //        for(int i=0; i<arr.length-1; i++){
 //            boolean isChanged = false; // for문이 다 돌기 전에 정렬이 완료 되면 멈추는 로직 추가
 //            for(int j=0; j<arr.length-1-i; j++){
@@ -240,7 +240,7 @@ public class C07Array {
 
 ////        이진검색(Binary Search) 알고리즘
 ////        사전에 오름차순 정렬이 되어 있어야 이진검색 가능.
-////        우리가 구하는 값이 어떤 n을 2로 나누는 값이라면 log2n의 값과 일치 할것
+////        우리가 구하는 값이 어떤 전체 n을 2로 반복해서 나누는 값이라면 log2n의 값과 일치 할것
 ////        =>시간복잡도가 log2n이다.(n값이 크면 클수록, 복잡도가 굉장히 줄어듬)\
 //
 //        int[] arr = {1,3,6,8,9,11};

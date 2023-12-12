@@ -22,6 +22,7 @@ public class C08List {
 //        초기값 생성방법 2.한꺼번에 add(배열을 이용한 변환)
         String[] myArr1 = {"java", "python", "c++"};
         List<String> myList2 = new ArrayList<>(Arrays.asList(myArr1));
+//        Arrays.asList : 배열을 리스트로 변환
 //        배열이 int인 경우 -> 형변환 이슈 발생 (문자열과 다르게 한꺼번에 형변환 하는게 문제가 된다)
         int[] myIntArr1 = {1,2,3};
 //        List<Integer> myIntList1 = new ArrayList<>(Arrays.asList(myIntArr1));

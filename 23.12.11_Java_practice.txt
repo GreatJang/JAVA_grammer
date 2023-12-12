@@ -52,3 +52,6 @@ n이 백만이면 log2n은 대략20정도. 엄청난 차이.
             - 일반적으로 뒷부분의 자료형은 생략
         - List<String> pitches = new ArrayList<>();
         - 가장 일반적인 선언방식으로 앞부분의 Arraylist대신에~
+
+n -> logn(힙구조)
+n^2 -> n X logn
