@@ -2,9 +2,7 @@
 
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class test {
@@ -315,16 +313,34 @@ public class test {
 //                System.out.println(1);
 //            } if
 
-        String cipher = "dfjardstddetckdaccccdegk";
-        int code = 4;
+//        String cipher = "dfjardstddetckdaccccdegk";
+//        int code = 4;
+//
+//        int k = code -1;
+//        String answer = "";
+//        char[] arr1 = cipher.toCharArray();
+//        for(int i=k; i<cipher.length(); i+=code){
+//            answer += arr1[i];
+//        }
+//        System.out.println(answer);
 
-        int k = code -1;
-        String answer = "";
-        char[] arr1 = cipher.toCharArray();
-        for(int i=k; i<cipher.length(); i+=code){
-            answer += arr1[i];
+        int[] numlist = {4, 5, 6, 7, 8, 9, 10, 11, 12};
+        int n = 3;
+        List<Integer> arr = new ArrayList<>();
+        for (int i = 0; i < numlist.length; i++) {
+            if (numlist[i]%n ==0){
+                arr.add(numlist[i]);
+            }
         }
-        System.out.println(answer);
+//        리스트에서 배열로 변환
+        int[] answer = new int[arr.size()];
+        for (int i = 0; i < arr.size(); i++) {
+            answer[i] = arr.get(i);
+        }
+        System.out.println(Arrays.toString(answer));
+
+
+
 
 
 

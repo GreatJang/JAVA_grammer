@@ -65,3 +65,8 @@ set, map은 순서가 없다. 원안에 값이 들어가 있다고 생각.
                 - numbers.sort(Comparator.naturalOrder());
             - 내림차순
                 - numbers.sort(Comparator.reverseOrder());
+
+자료형 - map
+- map은 키와 값(value)의 쌍으로 이루어진 데이터를 저장하는 자료구조
+- 성능이 좋다.
+- 해시값
