@@ -2,6 +2,8 @@
 //import java.util.Arrays;
 //import java.util.List;
 import java.util.*; // 자바 util패키지 안에 모든 패키지 사용할거야.
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.stream.Collectors;
 
 public class C08List {
     public static void main(String[] args) {
@@ -144,19 +146,76 @@ public class C08List {
 //        myList.sort(Comparator.reverseOrder());
 //        System.out.println(myList);
 
-//        1. String배열을 list로 변환
-        String[] myArr1 = {"java", "python", "c++"};
-        List<String> myList1 = new ArrayList<>(Arrays.asList(myArr1));
-        System.out.println(myList1);
+////        1. String배열을 list로 변환
+//        String[] stArr = {"java", "spring", "django"};
+////        1-1. ⭐Arrays.asList
+//        List<String> stList1 = new ArrayList<>(Arrays.asList(stArr));
+//        System.out.println(stList1);
+//
+////        1-2. ⭐for문담기
+//        List<String> stList2 = new ArrayList<>();
+//        for(String a : stArr){
+//            stList2.add(a);
+//        }
+//
+////        1-3.stramApi : 참고용
+//        List<String> stList3 = Arrays.stream(stArr).collect(Collectors.toList());
+//
+////        2.int배열을 list로 변환
+//        int[] intArr = {10,20,30,40};
+////        1-1.Arrays.asList사용불가
+////        1-2.for문 담기 사용가능⭐
+////        1-3.streamAPI 사용가능 : 참고용
+//        List<Integer> intList = Arrays.stream(intArr).boxed().collect(Collectors.toList());
 
+////        3.String리스트를 String배열로 변환⭐
+////        3-1)for문으로 할당
+//        List<String> stList = new ArrayList<>(Arrays.asList("hello", "java", "world"));
+//        String[] stArr = new String[stList.size()];
+//        for(int i=0; i< stArr.length; i++){
+//            stArr[i] = stList.get(i);
+//        }
+//        System.out.println(Arrays.toString(stArr));
+//
+////        3-2)streamAPI : 참고만
+//        String[] stArr2 = stList.stream().toArray(a->new String[a]);
 
+//        4.int리스트를 int매열로 변환
+//        4-1)for문으로 변환
+//        4-2)streamAPI로 변환
 
+////        두개뽑아서 더하기 : 리스트로 풀기
+//
+//        int[] numbers = {2,1,3,4,1};
+//        List<Integer> myList = new ArrayList<>();
+//        for(int i=0; i<numbers.length-1; i++){
+//            for(int j=i+1; j< numbers.length; j++){
+//                if(!myList.contains(numbers[i]+numbers[j])){
+//                    myList.add(numbers[i]+numbers[j]);
+//                }
+//            }
+//        }
+//        Collections.sort(myList);
+//        int[] answer = new int[myList.size()];
+//        for(int i=0; i<myList.size(); i++){
+//            answer[i] = myList.get(i);
+//        }
+//        System.out.println(myList);
 
-
-
-
-
-
+//        n의 배수 고르기 : x % n == 0 리스트로 풀기
+        int[] numlist = {4, 5, 6, 7, 8, 9, 10, 11, 12};
+        int n = 3;
+        List<Integer> arr = new ArrayList<>();
+        for (int i = 0; i < numlist.length; i++) {
+            if (numlist[i]%n == 0){
+                arr.add(numlist[i]);
+            }
+        }
+        int[] answer = new int[arr.size()];
+        for(int i=0; i< arr.size(); i++){
+            answer[i] = arr.get(i);
+        }
+        System.out.println(Arrays.toString(answer));
 
 
 
