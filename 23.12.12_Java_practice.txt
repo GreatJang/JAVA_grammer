@@ -24,11 +24,44 @@
         - 특정 리스트에 다른 특정 리스트 요소를 모두 add
     - get(int index)
         - 특정 위치에 있는 요소를 반환
-    - size()
+    - ⭐size()
         - 리스트 안에 있는 요소의 수를 반환
-    - isEmpty()
+    - ⭐isEmpty()
         - 리스트가 비어 있는지 여부를 반환
     - set(int index, E element)
         - 특정 위치에 있는 요소를 지정된 요소로 대체
     - contains(E element)
-        -
+        - contains 메소드는 리스트 안에 해당 항목이 있는지를 판별하여 그 결과를 boolean으로 리턴
+    - remove(value)
+        - 리스트에서 해당 항목이 발견되는 맨 앞의 value(객체타입)를 삭제하고 삭제한 결과(true,false)를 리턴
+    - remove(인덱스)
+        - 해당 인덱스의 항목을 삭제하고 삭제된 항목을 리턴
+    - clear()
+        - 모든 요소를 제거
+    - indexOf(E element)
+        - 지정된 요소가 위치한 인덱스 중 첫번째 값을 반환
+        - 리스트가 해당 요소를 포함하지 않으면 -1을 반환
+
+    리스트의 출력
+        - 이미 toString을 상속하여 내부적으로 호출하고 있으므로 리스트를 출력할때는 배열과는 다르게 별도로 to String
+
+
+
+set, map은 순서가 없다. 원안에 값이 들어가 있다고 생각.
+자바 index는 바로 찾아갈 수 있다. 복잡도가 O(1)
+
+- 자료형 - 리스트(list)의 정렬
+    - 컬렉션 클래스를 이용한 정렬
+        - Collection은 List, Set, Queue등의 상위 인터페이스
+            - Collection에 내장된 메서드는 하위 객체에서 사용가능
+        - List<Integer> numbers = new ArrayList<>();
+            - 오름차순
+                - Collection.sort(numbers);
+            - 내림차순
+                - Collection.sort(numbers, Comparator.reverseOrder());
+    - 리스트내의 내장함수 이용
+        - List<Integer> numbers = new ArrayList<>();
+            - 오름차순
+                - numbers.sort(Comparator.naturalOrder());
+            - 내림차순
+                - numbers.sort(Comparator.reverseOrder());
