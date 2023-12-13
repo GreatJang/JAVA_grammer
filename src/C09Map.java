@@ -65,18 +65,18 @@ public class C09Map {
 //        myList.add("tennis");
 //        myList.add("tennis");
 //        myList.add("tennis");
-//
-////        int count =1;
-////        Map<String, Integer> myMap = new HashMap<>();
-////        for (int i = 0; i < myList.size(); i++) {
-////            if(myMap.containsKey(myList.get(i)) == true){
-////                count ++;
-////            }else {
-////                count =1;
-////            }
-////            myMap.put(myList.get(i), count);
-////        }
-////        System.out.println(myMap);
+
+//        int count =1;
+//        Map<String, Integer> myMap = new HashMap<>();
+//        for (int i = 0; i < myList.size(); i++) {
+//            if(myMap.containsKey(myList.get(i)) == true){
+//                count ++;
+//            }else {
+//                count =1;
+//            }
+//            myMap.put(myList.get(i), count);
+//        }
+//        System.out.println(myMap);
 //
 //        Map<String, Integer> myMap = new HashMap<>();
 //        for(String a : myList){
@@ -85,19 +85,17 @@ public class C09Map {
 ////            }else{
 ////                myMap.put(a,1);
 ////            }
-//
 //            myMap.put(a, myMap.getOrDefault(a,0) + 1); // if/else문 사용 안하고풀이
 //        }
+//        System.out.println(myMap);
 
 
 //        완주하지 못한 선수
         String[] participant = {"leo", "kiki", "eden"};
         String[] completion = {"eden", "kiki"};
 
-        List<String> myList = new ArrayList<>(Arrays.asList(participant));
-        List<String> myList2 = new ArrayList<>(Arrays.asList(completion));
         Map<String, Integer> myMap = new HashMap<>();
-        for(String a : myList){
+        for(String a : participant){
             if(myMap.containsKey(a)){
                 myMap.put(a, myMap.get(a)+1);
             }else{
@@ -105,7 +103,7 @@ public class C09Map {
             }
         }
 
-        for(String a : myList2){
+        for(String a : completion){
             if(myMap.get(a) >= 1){
                 myMap.put(a, myMap.get(a)-1);
             }
@@ -118,10 +116,7 @@ public class C09Map {
             answer += a;
         }
         System.out.println(answer);
-//        Set<String> answerSet = myMap.keySet();
-//        for (String answer : answerSet) {
-//            System.out.println(answer);
-//        }
+
 
 //        //내 풀이
 //        String[] participant = {"leo", "kiki", "eden"};
@@ -145,7 +140,23 @@ public class C09Map {
 //        // 출력 해결 entry set으로 해결하기
 
 
+//        LinkedHashMap : 데이터 삽입순서 유지
+        Map<String, Integer> myMap1 = new LinkedHashMap<>();
+        myMap1.put("hello5", 1);
+        myMap1.put("hello4", 1);
+        myMap1.put("hello3", 1);
+        myMap1.put("hello2", 1);
+        myMap1.put("hello1", 1);
+        System.out.println(myMap1);
 
+//        TreeMap : key를 통해 데이터 정렬(기본적으로 오름차순 정렬)
+        Map<String, Integer> myMap2 = new TreeMap<>();
+        myMap2.put("hello5", 1);
+        myMap2.put("hello4", 1);
+        myMap2.put("hello3", 1);
+        myMap2.put("hello2", 1);
+        myMap2.put("hello1", 1);
+        System.out.println(myMap2);
 
 
 

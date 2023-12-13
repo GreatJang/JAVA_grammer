@@ -97,8 +97,8 @@ public class C08List {
 //        System.out.println(myList);
 
 ////        ⭐리스트 출력 ⭐자주 사용되는 형식
-//        List<int[]> myList = new ArrayList<>();
-//        myList.add(new int[]{1,2,3});
+//        ⭐List<int[]> myList = new ArrayList<>();
+//        myList.add(new int[]{1,2,3});⭐ 값 세팅 시 new int[] 후 세팅해야함
 //        myList.add(new int[2]);
 //        myList.add(new int[3]);
 //        myList.get(1)[0] = 10;
@@ -111,7 +111,7 @@ public class C08List {
 //            System.out.println(Arrays.toString(a));
 //        }
 
-//        List<List<Integer>>  myList2 = new ArrayList<>(); //리스트 안에 리스트
+//        ⭐List<List<Integer>>  myList2 = new ArrayList<>(); //리스트 안에 리스트
 //        myList2.add(new ArrayList<>(Arrays.asList(1,2,3)));
 //        myList2.add(new ArrayList<>(Arrays.asList(10,20,30)));
 //        myList2.add(new ArrayList<>(Arrays.asList(100,200,300)));
