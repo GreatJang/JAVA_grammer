@@ -157,24 +157,5 @@ public class C09Map {
         myMap2.put("hello2", 1);
         myMap2.put("hello1", 1);
         System.out.println(myMap2);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

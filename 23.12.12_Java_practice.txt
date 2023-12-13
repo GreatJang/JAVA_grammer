@@ -47,7 +47,7 @@
 
 
 
-set, map은 순서가 없다. 원안에 값이 들어가 있다고 생각.
+⭐set, map은 순서가 없다. 원안에 값이 들어가 있다고 생각.
 자바 index는 바로 찾아갈 수 있다. 복잡도가 O(1)
 
 - 자료형 - 리스트(list)의 정렬
@@ -70,3 +70,34 @@ set, map은 순서가 없다. 원안에 값이 들어가 있다고 생각.
 - map은 키와 값(value)의 쌍으로 이루어진 데이터를 저장하는 자료구조
 - 성능이 좋다.
 - 해시값
+
+
+자료형 - set
+- set은 수학에서의 집합과 유사한 성질을 지닌 자료형
+- HashSet이 대표적인 set
+- 중복된 값은 존재하지 않는다.
+- 순서가 없다.
+    - 인덱싱을 통해 자료형의 값을 얻을 수 없다.
+    - Map과 마찬가지로 Enhanced for문, Iterator 활용
+
+- Set<Integer> s1 = new HashSet<>(Arrays.asList(1,2,3,4,5,6));
+
+자료형 - Stack
+-후입선출(LIFO) 즉, 가장 나중에 저장된 (push) 데이터가 가장 먼저 인출(pop)되는 자료 구조
+
+스택의 생성
+- Stack<Integer> st = new Stack<>();
+
+주요메서드
+- push
+- pop()
+- peek()
+- empty()
+
+나중 데이터를 먼저 꺼내서 비교해야 하는 작업일 경우 stack 사용
+- 예시
+페이지 뒤로가기
+괄호 짝 맞추기
+
+List : 인덱스로 출력
+Set, Map : enhanced for문 or Iterator로 출력

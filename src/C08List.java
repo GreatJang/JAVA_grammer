@@ -185,7 +185,7 @@ public class C08List {
 //        4-2)streamAPI로 변환
 
 ////        두개뽑아서 더하기 : 리스트로 풀기
-//
+
 //        int[] numbers = {2,1,3,4,1};
 //        List<Integer> myList = new ArrayList<>();
 //        for(int i=0; i<numbers.length-1; i++){
@@ -202,20 +202,20 @@ public class C08List {
 //        }
 //        System.out.println(myList);
 
-//        n의 배수 고르기 : x % n == 0 리스트로 풀기
-        int[] numlist = {4, 5, 6, 7, 8, 9, 10, 11, 12};
-        int n = 3;
-        List<Integer> arr = new ArrayList<>();
-        for (int i = 0; i < numlist.length; i++) {
-            if (numlist[i]%n == 0){
-                arr.add(numlist[i]);
-            }
-        }
-        int[] answer = new int[arr.size()];
-        for(int i=0; i< arr.size(); i++){
-            answer[i] = arr.get(i);
-        }
-        System.out.println(Arrays.toString(answer));
+////        n의 배수 고르기 : x % n == 0 리스트로 풀기
+//        int[] numlist = {4, 5, 6, 7, 8, 9, 10, 11, 12};
+//        int n = 3;
+//        List<Integer> arr = new ArrayList<>();
+//        for (int i = 0; i < numlist.length; i++) {
+//            if (numlist[i]%n == 0){
+//                arr.add(numlist[i]);
+//            }
+//        }
+//        int[] answer = new int[arr.size()];
+//        for(int i=0; i< arr.size(); i++){
+//            answer[i] = arr.get(i);
+//        }
+//        System.out.println(Arrays.toString(answer));
 
 
 
