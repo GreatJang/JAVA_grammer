@@ -7,20 +7,16 @@ public class test2 {
     public static void main(String[] args) {
 
 
-//class Solution {
-//    public int[] solution(int[] array) {
-//        int[] answer = new int[2];
+
+//        String my_string = "hello";
+//        int num1 = 1;
+//        int num2 = 2;
+//        String[] Arr = new String[my_string.length()];
+//        String temp = Arr[num1];
+//        Arr[num1] = Arr[num2];
+//        Arr[num2] =
 //
-//        for(int i=0;i<array.length;i++) {
-//            if(array[i] > answer[0]) {
-//                answer[0] = array[i];
-//                answer[1] = i;
-//            }
-//        }
-//
-//        return answer;
-//    }
-//}
+//            String answer = "";
 
 
     }

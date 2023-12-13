@@ -218,10 +218,5 @@ public class C08List {
 //        System.out.println(Arrays.toString(answer));
 
 
-
-
-
-
-
     }
 }
