@@ -25,11 +25,16 @@ public class C1201Method {
 
 //        같은 클래스내의 메서드들 사이에서의 호출은 static메서드라 할지라도 클래스명 생략가능
         System.out.println(C1201Method.sumAcc(1,10));
+
+//        메서드 구성요소 : 매개변수, 반환타입, 접근제어자 4개, 클래스메서드여부(static)
+
+
     }
 
 //    void리턴타입 : 리턴타입없는것.
 //    int, String 등 리턴타입 명시
-    static int sumAcc(int start, int end){
+//    static이 있으면 클래스 메소드 없으면 객체 메소드(new사용)
+    public static int sumAcc(int start, int end){
         int total = 0;
         for (int i = start; i <= end ; i++) {
             total += i;
