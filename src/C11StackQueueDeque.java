@@ -1,7 +1,6 @@
 import java.util.*;
-import java.util.concurrent.ArrayBlockingQueue;
 
-public class C11StackQueue {
+public class C11StackQueueDeque {
     public static void main(String[] args) {
 //        Stack<Integer> mySt = new Stack<>();
 //        mySt.push(10);
@@ -101,7 +100,7 @@ public class C11StackQueue {
 
 ////        길이의 제한이 있는 큐 : ArrayBlockingQueue
 //        Queue<String> myQue = new ArrayBlockingQueue<>(3);
-////        add와 offer의 차이 : add는 길이가 다 찼을 때 에러를 발생(IllegalStateException: Queue full). offer는 공간이 충분할 때만 add
+////        add와 offer의 차이 : add는 길이가 다 찼을 때 에러를 발생(IllegalStateException: Queue full). offer는 공간이 충분할 때까지만 add
 //        myQue.offer("hello1");
 //        myQue.offer("hello2");
 //        myQue.offer("hello3");
@@ -119,6 +118,7 @@ public class C11StackQueue {
 //        pq.add(50);
 //        System.out.println(pq);
 ////        내부적으로 힙 자료구조를 가지고 있기 때문에 정렬이 깔끔하지 않다. 원칙적으로는 맨 앞에 제일 작은 값이 있다.
+//        힙 자료구조는 완전 이진트리
 //        while(!pq.isEmpty()){
 //            System.out.println(pq.poll());
 //        }
@@ -126,36 +126,36 @@ public class C11StackQueue {
 
 
 
-////        ⭐프로그래머스 더 맵게 문제
-        int[] scoville = {1,2,3,9,10,12};
-        int K=7;
+//////        ⭐프로그래머스 더 맵게 문제
+//        int[] scoville = {1,2,3,9,10,12};
+//        int K=7;
+////
+////        list로 변환 -> int temp = get(0) + get(1)*2;
+////        remove(0), remove(0)
 //
-//        list로 변환 -> int temp = get(0) + get(1)*2;
-//        remove(0), remove(0)
-
-//        List로 문제 풀이 시 시간 효울성 에러
-        List<Integer> myList  = new ArrayList<>();
-        for(int a : scoville){
-            myList.add(a);
-        }
-        int answer = 0;
-                while(true){
-                    if(myList.get(0) >= K){
-                        break;
-                    }else if(myList.size() == 1 && myList.get(0)<K){
-                        answer = -1;
-                        break;
-                    }else{
-                        answer++;
-                        int temp = myList.get(0) + myList.get(1)*2;
-                        myList.remove(0);
-                        myList.remove(0);
-                        myList.add(temp);
-                        Collections.sort(myList);
-                    }
-
-                }
-                System.out.println(answer);
+////        List로 문제 풀이 시 시간 효울성 에러
+//        List<Integer> myList  = new ArrayList<>();
+//        for(int a : scoville){
+//            myList.add(a);
+//        }
+//        int answer = 0;
+//                while(true){
+//                    if(myList.get(0) >= K){
+//                        break;
+//                    }else if(myList.size() == 1 && myList.get(0)<K){
+//                        answer = -1;
+//                        break;
+//                    }else{
+//                        answer++;
+//                        int temp = myList.get(0) + myList.get(1)*2;
+//                        myList.remove(0);
+//                        myList.remove(0);
+//                        myList.add(temp);
+//                        Collections.sort(myList);
+//                    }
+//
+//                }
+//                System.out.println(answer);
 
 
 ////        내 풀이
@@ -182,7 +182,64 @@ public class C11StackQueue {
 //        System.out.println(answer);
 
 
+//        ArrayDeque : 양방향에서 데이터를 삽입 / 제거 할 수 있다.
+//        Deque<Integer> myDeque = new ArrayDeque<>();
+//        myDeque.addFirst(10);
+//        myDeque.addFirst(20);
+//        System.out.println(myDeque); //20,10
+//        myDeque.addLast(30);
+//        System.out.println(myDeque); //20,10,30
+//
+//        System.out.println(myDeque.pollFirst()); //20
+//        System.out.println(myDeque.pollLast()); //30
+//        System.out.println(myDeque); //10
 
+//        프로그래머스 올바른 괄호
+        String s = "(())()"; // ")()("
+        boolean answer = true;
+        Deque<Character> myDeque = new ArrayDeque<>();
+        for (int i = 0; i < s.length(); i++) {
+            if(myDeque.isEmpty()){
+                myDeque.addLast(s.charAt(i));
+                if (s.charAt(i) ==')'){
+                    answer = false;
+                    break;
+                }
+            }else{
+                if(myDeque.peekLast()=='(' && s.charAt(i)==')'){
+                    myDeque.pollLast();
+                }else{
+                    myDeque.addLast(s.charAt(i));
+                }
+            }
+        }
+        if(!myDeque.isEmpty()){
+            answer = false;
+        }
+
+
+
+
+//        내 풀이
+//        char[] my_char = s.toCharArray();
+//        Deque<String> myDeque = new ArrayDeque<>();
+//        System.out.println(my_char);
+//        boolean answer = true;
+//
+//        for (int i = 0; i < my_char.length; i++) {
+//            myDeque.addLast(String.valueOf(my_char[i]));
+//        }
+//        if(myDeque.peekFirst() == ")" ){
+//            answer = false;
+//
+//        }else if(myDeque.pollLast() == ")" ){
+//            answer = false;
+//        }
+//        System.out.println(answer);
+
+//
+//            // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+//            System.out.println("Hello Java");
 
 
 

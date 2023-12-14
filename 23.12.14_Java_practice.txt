@@ -1,0 +1,19 @@
+23.12.14 자바 기초
+⭐
+
+자료형 - ArrayDeque
+ArrayDeque는 Java의 Deque 인터페이스를 구현한 클래스
+Deque는 양방향 큐를 의미하며, 양쪽 끝에서 모든 요소의 추가와 삭제가 가능한 자료구조
+Deque<Integer> myDeque = new ArrayDeque<>();
+
+특징
+- 성능은 더 좋음
+- java재단에서 추천하는 방식
+
+주요 메서드
+- addFirst()
+- addLast()
+- peekFirst()
+- peekLast()
+- pollFirst()
+- pollLast()
