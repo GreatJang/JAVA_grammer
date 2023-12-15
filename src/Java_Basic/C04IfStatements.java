@@ -1,3 +1,5 @@
+package Java_Basic;
+
 import java.lang.invoke.SwitchPoint;
 import java.util.Scanner;
 import java.util.SplittableRandom;

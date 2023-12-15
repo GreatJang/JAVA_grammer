@@ -1,4 +1,4 @@
-//import java.util.ArrayList; // 자바 util패키지 안에 ArrayList패키지를 쓸거야.
+package Java_Basic;//import java.util.ArrayList; // 자바 util패키지 안에 ArrayList패키지를 쓸거야.
 //import java.util.Arrays;
 //import java.util.List;
 import java.util.*; // 자바 util패키지 안에 모든 패키지 사용할거야.

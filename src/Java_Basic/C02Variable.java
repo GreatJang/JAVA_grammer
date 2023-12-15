@@ -1,3 +1,5 @@
+package Java_Basic;
+
 import java.math.BigDecimal;
 
 public class C02Variable {

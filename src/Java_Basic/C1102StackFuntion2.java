@@ -1,3 +1,5 @@
+package Java_Basic;
+
 public class C1102StackFuntion2 {
     public static void main(String[] args) {
         System.out.println("main함수 시작");
