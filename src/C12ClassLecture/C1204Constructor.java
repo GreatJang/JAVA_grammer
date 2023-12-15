@@ -29,11 +29,25 @@ class calender{
     }
 //    메서드 오버로딩을 통해 같은 이름의 생성자 생성가능
         calender(String year, String month){
+//        this(year, month, null); // this 사용해서 한줄로 가능
+//            이 this의 역할은 year, month 값이 들어오면 day부분에 null을 삽입해줌.
         this.year = year;
         this.month = month;
     }
     calender(String year){
 //        this() 키워드를 통해 클래스내 매개변수에 맞는 생성자 호출 가능
         this(year, null, null);
+    }
+//    public getter
+    public String getYear() {
+        return year;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public String getDay() {
+        return day;
     }
 }
