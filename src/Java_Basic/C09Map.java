@@ -41,7 +41,7 @@ public class C09Map {
 //        for(String a : myMap.keySet()){
 //            System.out.println(myMap.get(a));
 //        }
-
+//
 //        Map<String, String> myMap = new HashMap<>();
 //        myMap.put("basketball", "농구");
 //        myMap.put("soccer", "축구");
@@ -92,32 +92,32 @@ public class C09Map {
 //        System.out.println(myMap);
 
 
-//        완주하지 못한 선수
-        String[] participant = {"leo", "kiki", "eden"};
-        String[] completion = {"eden", "kiki"};
-
-        Map<String, Integer> myMap = new HashMap<>();
-        for(String a : participant){
-            if(myMap.containsKey(a)){
-                myMap.put(a, myMap.get(a)+1);
-            }else{
-                myMap.put(a,1);
-            }
-        }
-
-        for(String a : completion){
-            if(myMap.get(a) >= 1){
-                myMap.put(a, myMap.get(a)-1);
-            }
-            if(myMap.get(a) < 1){
-                myMap.remove(a);
-            }
-        }
-        String answer = "";
-        for(String a : myMap.keySet()){
-            answer += a;
-        }
-        System.out.println(answer);
+////        완주하지 못한 선수
+//        String[] participant = {"leo", "kiki", "eden"};
+//        String[] completion = {"eden", "kiki"};
+//
+//        Map<String, Integer> myMap = new HashMap<>();
+//        for(String a : participant){
+//            if(myMap.containsKey(a)){
+//                myMap.put(a, myMap.get(a)+1);
+//            }else{
+//                myMap.put(a,1);
+//            }
+//        }
+//
+//        for(String a : completion){
+//            if(myMap.get(a) >= 1){
+//                myMap.put(a, myMap.get(a)-1);
+//            }
+//            if(myMap.get(a) < 1){
+//                myMap.remove(a);
+//            }
+//        }
+//        String answer = "";
+//        for(String a : myMap.keySet()){
+//            answer += a;
+//        }
+//        System.out.println(answer);
 
 
 //        //내 풀이
