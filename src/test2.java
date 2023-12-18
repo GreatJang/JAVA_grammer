@@ -5,33 +5,23 @@ import java.util.*;
 import java.util.stream.Stream;
 
 public class test2 {
+    static int answer;
+    static int temp=0;
     public static void main(String[] args) {
+        recur(3, 2, 0);
+        System.out.println(answer);
 
-        int[] numbers = {1,2,3};
-        String direction = "right";
+    }
 
-        List<Integer> newList = new ArrayList<>();
-        for(int a : numbers){
-            newList.add(a);
+    static void recur(int balls, int share, int start){
+        if(temp == share){
+            answer ++;
         }
-        if(direction.equals("right")){
-            newList.add(0,newList.get(newList.size()-1));
-            newList.remove(newList.size()-1);
-
+        for(int i = start; i< balls; i++){
+            temp ++;
+            System.out.println(temp);
+            recur(balls, share, i+1);
+            temp --;
         }
-
-        else if(direction.equals("left")){
-            newList.add(newList.size(), newList.get(0));
-            newList.remove(0);
-        }
-
-        int[] answer = new int[newList.size()];
-        for (int i = 0; i < answer.length; i++) {
-            answer[i] = newList.get(i);
-        }
-        System.out.println(Arrays.toString(answer));
-
-
-
     }
 }
