@@ -116,7 +116,7 @@ class Post{
     private String contents;
     private Author author;
     static Long static_id = 0L;
-    Post(String title, String contents, Author author){
+    Post(String title, String contents, Author author){ // 생성자로 값을 초기화
         static_id += 1;
         this.author = author;
 //        this.author.addPost(this);
