@@ -35,6 +35,5 @@ public class C1207RecurCombiPermu {
             combination(n, i+1, temp, combination_list, myList); // 메서드 호출이기때문에 변수명으로 넣어야 한다.
             temp.remove(temp.size() - 1);
         }
-
     }
 }
