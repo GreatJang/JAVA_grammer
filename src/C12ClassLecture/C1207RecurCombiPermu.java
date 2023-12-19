@@ -131,9 +131,10 @@ public class C1207RecurCombiPermu {
         for (int i = 0 ; i < myList.size(); i++) { // int i 값을 0으로 두면 변화하지 않기 때문에 값이 전체가 다 나온다.
             if(visited[i] == false){ // i번째 visited가 false 일때 temp add 로직 추가
                 visited[i] = true; // i번째 visited를 true로 변경
-                temp += myList.get(i); // temp 배열에 add
-                permutation(temp, count+1/*⭐*/, permutation_list, myList, visited); // 메서드 호출이기때문에 변수명으로 넣어야 한다.
-                temp -= myList.get(i); // 백 트랙킹// index 1번째 요소값 삭제
+//                temp += myList.get(i); // temp 배열에 add
+                permutation(temp + myList.get(i), count+1/*⭐*/, permutation_list, myList, visited); // 메서드 호출이기때문에 변수명으로 넣어야 한다.
+//                temp -= myList.get(i); // 백 트랙킹// index 1번째 요소값 삭제
+                // temp +-를 지우고 permutatiion temp에 temp + myList.get(i)을 넣으면 코드가 더 간단해진다.
                 visited[i] = false; // i번째 visited를 false로 변경
             }
         }

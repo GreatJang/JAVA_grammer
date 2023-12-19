@@ -5,23 +5,20 @@ import java.util.*;
 import java.util.stream.Stream;
 
 public class test2 {
-    static int answer;
-    static int temp=0;
     public static void main(String[] args) {
-        recur(3, 2, 0);
+        int order = 29423;
+        int answer = 0;
+        List<Integer> intList = new ArrayList<>();
+        while(order>0){
+            intList.add(order%10);
+            order/=10;
+        }
+        Collections.reverse(intList);
+        for (int i = 0; i < intList.size(); i++) {
+            if (intList.get(i) == 3 || intList.get(i) == 6 || intList.get(i) == 9) {
+                answer++;
+            }
+        }
         System.out.println(answer);
-
-    }
-
-    static void recur(int balls, int share, int start){
-        if(temp == share){
-            answer ++;
-        }
-        for(int i = start; i< balls; i++){
-            temp ++;
-            System.out.println(temp);
-            recur(balls, share, i+1);
-            temp --;
-        }
     }
 }
