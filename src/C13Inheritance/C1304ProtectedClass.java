@@ -5,8 +5,8 @@ package C13Inheritance;
 // default : 패키지내에서만 접근가능
 // private : 클래스내에서만 접근가능
 public class C1304ProtectedClass {
-    private String st1 = "hello java1";
+    private String st1 = "hello java1"; // 객체는 private하게
     String st2 = "hello java2";
     protected String st3 = "hello java3";
-    public String st4 = "hello java4";
+    public String st4 = "hello java4"; // 메소드는 public하게
 }
