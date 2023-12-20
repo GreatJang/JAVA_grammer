@@ -1,6 +1,6 @@
 package C14Interface.Bank.Service;
 
-import C14Interface.Bank.BankAccount;
+import C14Interface.Bank.Model.BankAccount;
 
 import java.math.BigDecimal;
 
@@ -13,7 +13,7 @@ public class BankCardImpl implements BankService {
     }
 
     @Override
-    public void withdraw() {
+    public void withdraw(BankAccount bankAccount, BigDecimal money) {
 
     }
 }
