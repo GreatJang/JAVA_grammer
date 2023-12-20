@@ -8,7 +8,7 @@ public class KakaoPayImpl implements BankService {
     @Override
     public void deposit(BankAccount bankAccount, BigDecimal money) {
         bankAccount.setBalance(money.add(bankAccount.getBalance()));
-//        BigDecimal은 +로 더하기가 불가능
+//        money BigDecimal 말고 long으로 변경하기
 //        interface에 명시된 서비스를 실제 구현. deposit 기능 사용하겠다고 interface에서 가져옴
 //        가져온 후 kakaoPay입금 관련 서비스 구현함
 
