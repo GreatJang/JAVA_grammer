@@ -1,30 +1,30 @@
-//import java.util.*;
-//
-//public class test {
-//    static int answer=0;
-//    static int count=0;
-//    public static void main(String[] args) {
-//        boolean[] visited = new boolean[dungeons.length()];
-//        permutation(k, dungeons, visited);
-//
-//    }
-//    //    3개 순열에서 합계가 가장 큰값(합 값만) : max 찾기 알고리즘(static활용)
-//    static void permutation(int k, int[][] dungeons, boolean[] visited){
-//            if(count > answer){
-//                answer = count;
-//            }
-//            if(count == dungeons.length) {
-//                return;
-//            }
-//        for (int i = 0 ; i < dungeons.length; i++) {
-//            if(!visited[i] && count + dungeons[i][0] <= k){
-//                visited[i] = true;
-//                count += dungeons[i][1];
-//                permutation(k, dungeons, visited);
-//                count -= dungeons[i][1];
-//                visited[i] = false;
-//            }
+import java.util.*;
+
+public class test {
+    public static void main(String[] args) {
+//        10 이하 합성수는 4, 6, 8, 9, 10 로 5개입니다. 따라서 5를 return합니다.
+        int n = 10;
+        int count =0;
+        int answer = 0;
+        for (int i = 4; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                if (i % j == 0) {
+                    count+=1;
+                }
+            }
+            if (count >= 3) {
+                answer++;
+                i++;
+            }
+        }
+
+//        if (count >= 3) {
+//            answer++;
+//            count = 0;
 //        }
-//    }
-//}
-//
+        System.out.println(answer);
+//      return answer;
+
+    }
+}
+
