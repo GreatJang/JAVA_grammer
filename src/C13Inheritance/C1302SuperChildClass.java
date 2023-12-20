@@ -19,7 +19,7 @@ public class C1302SuperChildClass extends SuperParents{
     public static void main(String[] args) {
         C1302SuperChildClass sc = new C1302SuperChildClass();
         sc.display();
-//        System.out.println(super.a); // static이어서 부모메소드 호출 불가
+//        System.out.println(sc.super.a); // static이어서 부모메소드 호출 불가
     }
 }
 class SuperParents{
