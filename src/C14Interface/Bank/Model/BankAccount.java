@@ -1,5 +1,11 @@
 package C14Interface.Bank.Model;
 
+//인터페이스 실습
+//        -1)BankController 클래스:사용자 요청처리
+//        -2)BankService 인터페이스
+//        -3)BankService 구현체:BankCardService,BankKapaySerice 예금,적금 부분넣기
+//        -4)BankAccount 엔티티
+
 import java.math.BigDecimal;
 
 public class BankAccount {
@@ -9,9 +15,9 @@ public class BankAccount {
     private String email;
     private String password;
     private String account; //계좌
-    private BigDecimal balance; // 잔액
+    private long balance; // 잔액
 
-    public BankAccount(Long id, String name, String email, String password, String account, BigDecimal balance) {
+    public BankAccount(Long id, String name, String email, String password, String account, long balance) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -40,11 +46,11 @@ public class BankAccount {
         return account;
     }
 
-    public BigDecimal getBalance() {
+    public long getBalance() {
         return balance;
     }
 
-    public void setBalance(BigDecimal balance) {
+    public void setBalance(long balance) {
         this.balance = balance;
     }
 }
