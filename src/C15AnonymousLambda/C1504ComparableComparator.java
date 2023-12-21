@@ -39,13 +39,13 @@ public class C1504ComparableComparator {
 //        studentList.add(student3);
 //        studentList.add(student4);
 //        studentList.add(new Student("sin", 25)); // 합쳐서 표현 가능
+
+//        System.out.println(studentList);
+//        for (Student student : studentList) { // 향상 for문
+//            System.out.println("학생이름 : " + student.getName() + " 학생나이 : " + student.getAge());
+//        }
 //
-////        System.out.println(studentList);
-////        for (Student student : studentList) { // 향상 for문
-////            System.out.println("학생이름 : " + student.getName() + " 학생나이 : " + student.getAge());
-////        }
-//
-////        방법1 : Comparator를 익명객체 방식으로 활용하여 정렬, 매개변수 2개
+////        ⭐⭐⭐⭐ 방법1 : Comparator를 익명객체 방식으로 활용하여 정렬, 매개변수 2개 // 정렬 사용시 Comparator 사용하기
 ////        나이로 정렬
 //        studentList.sort((o1, o2) -> o1.getAge() - o2.getAge());
 //        System.out.println(studentList);
@@ -88,31 +88,41 @@ public class C1504ComparableComparator {
 //        }
 //        System.out.println(Arrays.toString(num));
 
-        int[] numbers = {3, 30, 34, 5, 9};
-//        int[] numbers = {0, 0, 0, 0, 0};
-        String[] num = new String[numbers.length];
-        for (int i = 0; i < num.length; i++) {
-            num[i] = Integer.toString(numbers[i]);
-        }
-        Arrays.sort(num, (o1, o2) -> (o2+o1).compareTo(o1+o2));
+//        int[] numbers = {3, 30, 34, 5, 9};
+////        int[] numbers = {0, 0, 0, 0, 0};
+//        String[] num = new String[numbers.length];
+//        for (int i = 0; i < num.length; i++) {
+//            num[i] = Integer.toString(numbers[i]);
+//        }
+//        Arrays.sort(num, (o1, o2) -> (o2+o1).compareTo(o1+o2));
+//
+//        String answer = String.join("", num);
+//        if(answer.charAt(0) == '0'){
+//            System.out.println("0");
+//        }
+//        System.out.println(answer);
 
-        String answer = String.join("", num);
-        if(answer.charAt(0) == '0'){
-            System.out.println("0");
-        }
+////        방법2 : Comparable를 인터페이스에 implements 후 compareTo메서드 구현, 매개변수 1개
+//        Collections.sort(studentList);
+//        System.out.println(studentList);
 
+//        쓰레드 구현방식 : 쓰레드상속, Runnable방식
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("새로 만든 쓰레드 입니다.");
+            }
+        });
+        t1.start();
 
-
-//        방법2 : Comparable인터페이스 implements 후 compareTo메서드 구현, 매개변수 1개
-
-
-
+        new Thread(() -> System.out.println("main의 쓰레드 입니다.")).start();
+        System.out.println("main의 쓰레드입니다.");
 
 
     }
 }
 
-class Student {
+class Student implements Comparable<Student>{
     private String name; // Student 객체 클래스에서 변수 선언
     private int age; // Student 객체 클래스에서 변수 선언
 
@@ -133,5 +143,9 @@ class Student {
     @Override
     public String toString() {
         return "이름은 " + this.name + " 나이는 " + this.age;
+    }
+    @Override
+    public int compareTo(Student o) {
+        return this.name.compareTo(o.name);
     }
 }
