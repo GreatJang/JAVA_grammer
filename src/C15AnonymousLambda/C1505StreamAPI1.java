@@ -93,33 +93,67 @@ public class C1505StreamAPI1 {
 
 ////        스트림소모 : forEach, reduce
 ////        forEach
-        int[] arr = {10, 20, 30, 40};
+//        int[] arr = {10, 20, 30, 40};
 ////        Arrays.stream(arr).forEach(a -> System.out.println(a));
 //        Arrays.stream(arr).forEach(System.out::println);
 
-//        reduce : 누적연산
-//        초기값을 지정하지 않으면 Optional객체 return
-//        ⭐Optional객체 : 값이 있을수도 있고, 없을수도 있다는 것을 명시한 타입(java8이후 추가)
+////        reduce : 누적연산
+////        초기값을 지정하지 않으면 Optional객체 return
+////        ⭐Optional객체 : 값이 있을수도 있고, 없을수도 있다는 것을 명시한 타입(java8이후 추가)
+//
+//        String st1 = null;
+////        System.out.println(st1.length());
+//        Optional<String> myOptional = Optional.ofNullable("hello");
+//        if(myOptional.isPresent()){
+//            System.out.println(myOptional.get().length());
+//        }
+//
+//        int result = Arrays.stream(arr).reduce(1, (a,b) -> a*b); // 초기값 지정 곱하기이기 때문에 1
+//        System.out.println(result);
+//
+//        int result2 = Arrays.stream(arr).reduce(0,(a,b) -> a+b); // 초기값 지정 더하기이기 때문에 0
+////        int result3 = Arrays.stream(arr).reduce((a,b) -> a+b).getAsInt(); // 이렇게도 가능하지만 위에 코드처럼 초기값을 확인하는게 더 좋은 코드다.
+//        System.out.println(result2);
+//
+//        String[] stArr = {"hello", "java", "world"}; // "hello, java, world"로 출력하기 초기값 "" + 후 구분자, 넣기
+//        Optional<String> answer = Arrays.stream(stArr).reduce((a,b) -> a+", "+b);
+//        if(answer.isPresent()){ // 만약 answer에 값이 있으면
+//            System.out.println(answer.get()); // answer를 출력한다.
+//        }
 
-        String st1 = null;
-//        System.out.println(st1.length());
-        Optional<String> myOptional = Optional.ofNullable("hello");
-        if(myOptional.isPresent()){
-            System.out.println(myOptional.get().length());
-        }
+////        최소/최대/평균/총합/개수 : min/max/average/sum/count
+//        List<Integer> myList = new ArrayList<>(Arrays.asList(1,2,3,4,5));
+////        myList.stream().map(a->a+1).min(Collections)
+//        System.out.println(myList.stream().mapToInt(a->a).min().getAsInt()); //mapToInt로 IntStream으로 형변경, getAsInt로 int형으로 변경
+//        System.out.println(myList.stream().mapToInt(a->a).max().getAsInt());
+//        System.out.println(myList.stream().mapToInt(a->a).average().getAsDouble());
+//        System.out.println(myList.stream().mapToInt(a->a).sum());
+//        System.out.println(myList.stream().count());
 
-        int result = Arrays.stream(arr).reduce(1, (a,b) -> a*b); // 초기값 지정 곱하기이기 때문에 1
-        System.out.println(result);
+//        findFirst
+        List<Student> myStudents = new ArrayList<>();
+        myStudents.add(new Student("kim", 25));
+        myStudents.add(new Student("jang", 33));
+        myStudents.add(new Student("park", 36));
+        myStudents.add(new Student("lee", 27));
+        myStudents.add(new Student("kang", 23));
+        Student s = myStudents.stream().filter(a->a.getAge()>30).findFirst().get();
+//        System.out.println(s);
 
-        int result2 = Arrays.stream(arr).reduce(0,(a,b) -> a+b); // 초기값 지정 더하기이기 때문에 0
-//        int result3 = Arrays.stream(arr).reduce((a,b) -> a+b).getAsInt(); // 이렇게도 가능하지만 위에 코드처럼 초기값을 확인하는게 더 좋은 코드다.
-        System.out.println(result2);
+//        Student객체 실습
+//        1)가장 나이 어린 사람 찾기 //찾아서 정보 출력 String
+//        2)30대가 몇명인지 출력 String
+//        3)모든 객체의 평균나이 출력
+//        4)30세 이하 선착순 누군인지 출력 // sorted findFirst
 
-        String[] stArr = {"hello", "java", "world"}; // "hello, java, world"로 출력하기 초기값 "" + 후 구분자, 넣기
-        Optional<String> answer = Arrays.stream(stArr).reduce((a,b) -> a+", "+b);
-        if(answer.isPresent()){ // 만약 answer에 값이 있으면
-            System.out.println(answer.get()); // answer를 출력한다.
-        }
+        System.out.println(myStudents.stream().sorted((o1,o2) -> o1.getAge()-o2.getAge()).findFirst().get());
+        System.out.println(myStudents.stream().min((o1,o2) -> o1.getAge()-o2.getAge()).get());
+
+        System.out.println(myStudents.stream().filter(a->a.getAge()>=30).count());
+
+        System.out.println(myStudents.stream().mapToInt(a->a.getAge()).average().getAsDouble());
+
+        System.out.println(myStudents.stream().filter(a->a.getAge()<=30).findFirst().get());
 
 
 
