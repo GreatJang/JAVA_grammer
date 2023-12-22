@@ -167,18 +167,18 @@ public class C1505StreamAPI1 {
             System.out.println(st.compareTo("abc"));
         }
 
-//        java8이후에 나온 Optional객체를 통해 특정 객체에 값이 없을지도 모른다는 것을 명시적으로 표현
-//        Optional객체에 빈값을 명시적으로 넣는 방법 : Optional.empty();
-        Optional<String> opt1 = Optional.empty(); // 문제를 발생시키는 빈값
-//        빈값인지 아닌지 check하는 메서드 : isPresent()
-        if(opt1.isPresent()){
-            System.out.println(opt1.get().compareTo("abc"));
-        } else{
-            System.out.println("값이 없습니다.");
-        }
+////        java8이후에 나온 Optional객체를 통해 특정 객체에 값이 없을지도 모른다는 것을 명시적으로 표현
+////        Optional객체에 빈값을 명시적으로 넣는 방법 : Optional.empty();
+//        Optional<String> opt1 = Optional.empty(); // 문제를 발생시키는 빈값
+////        빈값인지 아닌지 check하는 메서드 : isPresent()
+//        if(opt1.isPresent()){
+//            System.out.println(opt1.get().compareTo("abc"));
+//        } else{
+//            System.out.println("값이 없습니다.");
+//        }
 
 //        optional객체 생성
-        Optional<String> opt2 = Optional.ofNullable("hello"); // null이 있을수도 있음을 의미.
+//        Optional<String> opt2 = Optional.ofNullable("hello"); // null이 있을수도 있음을 의미.
 
 //        ⭐orElse관련 메서드 사용하여 null(빈값)처리
 //        ⭐orElse(), orElseGet(), ⭐orElseThrow() : Spring 예외처리에서 자주사용되는 메서드(orElseThrow())
@@ -194,14 +194,14 @@ public class C1505StreamAPI1 {
 //        int result = opt1.orElseThrow(()-> new NoSuchElementException("객체에 값이 없습니다.")).compareTo("abc");
 //        System.out.println(result);
 
-//        OptionalInt, OptionalDouble
-        OptionalInt oi = new ArrayList<>(Arrays.asList(1,2,3,4)).stream().mapToInt(a->a).max();
-//        isPresent로 check
-        if(oi.isPresent()){
-        }else {
-        }
-//        orelse 등의 방법 활용
-        System.out.println(oi.orElseThrow(()->new NoSuchElementException("no value")));
+////        OptionalInt, OptionalDouble
+//        OptionalInt oi = new ArrayList<>(Arrays.asList(1,2,3,4)).stream().mapToInt(a->a).max();
+////        isPresent로 check
+//        if(oi.isPresent()){
+//        }else {
+//        }
+////        orelse 등의 방법 활용
+//        System.out.println(oi.orElseThrow(()->new NoSuchElementException("no value")));
 
 
 
