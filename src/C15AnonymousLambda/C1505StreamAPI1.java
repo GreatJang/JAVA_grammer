@@ -52,15 +52,15 @@ public class C1505StreamAPI1 {
 
 //        stream 중개연산 : ⭐filter, ⭐map, sorted, distinct
 
-//        distinct : 중복제거 후 스트림반환
-        int[] intArr = {10,10,30,30,50};
-//        중복제거 후 총합 반환
-        int answer = Arrays.stream(intArr).distinct().sum();
-
-        String[] stArr = {"java", "java", "python", "C++"};
-//        중복제거 후 새로운 배열 생성
-        String[] stArr2 = Arrays.stream(stArr).distinct().toArray(String[]::new);
-        System.out.println(Arrays.toString(stArr2));
+////        distinct : 중복제거 후 스트림반환
+//        int[] intArr = {10,10,30,30,50};
+////        중복제거 후 총합 반환
+//        int answer = Arrays.stream(intArr).distinct().sum();
+//
+//        String[] stArr = {"java", "java", "python", "C++"};
+////        중복제거 후 새로운 배열 생성
+//        String[] stArr2 = Arrays.stream(stArr).distinct().toArray(String[]::new);
+//        System.out.println(Arrays.toString(stArr2));
 ////        중복제거하고 길이가 3개 이하것으로 제한하고, 남은배열의 길이 총합.(sum)
 ////        mapToInt를 통해 IntStream으로 변환 // IntStream으로 변환도기 때문에 IntStream으로 받아줘야함
 ////        총합으로 결과 출력시 int로 받아줘야함
@@ -68,20 +68,60 @@ public class C1505StreamAPI1 {
 //        int myStream2 = Arrays.stream(stArr).distinct().filter(a->a.length()<=3).mapToInt(a ->a.length()).sum();
 //        System.out.println(myStream2);
 
-//        sorted : 정렬된 스트림반환
-        int[] arr = {5,1,2,3,5,7};
-//        내림차순 정렬된 숫자 신규 배열 반환
-        int[] new_arr = Arrays.stream(arr).sorted().toArray();
-        System.out.println(Arrays.toString(new_arr));
+////        sorted : 정렬된 스트림반환
+//        int[] arr = {4,1,2,3,6,7};
+////        내림차순 정렬된 숫자 신규 배열 반환
+//        int[] new_arr = Arrays.stream(arr).sorted().toArray();
+//        System.out.println(Arrays.toString(new_arr));
+//
+//        List<Integer> myList = new ArrayList<>(Arrays.asList(6,1,2,3,1,6));
+////        collect(구체적인컬렉션객체명시)
+//        List<Integer> myLis2 = myList.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+//
+//        List<String> stList = new ArrayList<>(Arrays.asList("java", "python", "C++", "javascript"));
+////        streamAPI를 사용해서 문자열의 길이 4개 이상인, 문자열의 길이를 기준으로 정렬(내림)까지 하여 신규 List생성
+////        문자열의 길이를 기준은 람다사용해서 풀기
+//        List<String> new_stList = stList.stream().filter(a -> a.length()>=4).sorted((o1,o2) -> o2.length()-o1.length()).collect(Collectors.toList());
+//        System.out.println(new_stList);
+//
+//        int[] arr_plus10 = Arrays.stream(arr).map(a-> a+10).toArray();
+//        System.out.println(Arrays.toString(arr_plus10));
+//
+////        arr에서 짝수만 골라서 해당 수의 제곱의 총합을 구하라. sum()
+//        int answer = Arrays.stream(arr).filter(a -> a%2==0).map(a->a*a).sum();
+//        System.out.println(answer);
 
-        List<Integer> myList = new ArrayList<>(Arrays.asList(6,1,2,3,1,6));
-//        collect(구체적인컬렉션객체명시)
-        List<Integer> myLis2 = myList.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+////        스트림소모 : forEach, reduce
+////        forEach
+        int[] arr = {10, 20, 30, 40};
+////        Arrays.stream(arr).forEach(a -> System.out.println(a));
+//        Arrays.stream(arr).forEach(System.out::println);
 
-        List<String> stList = new ArrayList<>(Arrays.asList("java", "python", "C++", "javascript"));
-//        streamAPI를 사용해서 문자열의 길이 4개 이상인, 문자열의 길이를 기준으로 정렬(내림)까지 하여 신규 List생성
-        List<String> new_stList = stList.stream().sorted(Comparator.reverseOrder()).filter(a -> a.length()>=4).collect(Collectors.toList());
-        System.out.println(new_stList);
+//        reduce : 누적연산
+//        초기값을 지정하지 않으면 Optional객체 return
+//        ⭐Optional객체 : 값이 있을수도 있고, 없을수도 있다는 것을 명시한 타입(java8이후 추가)
+
+        String st1 = null;
+//        System.out.println(st1.length());
+        Optional<String> myOptional = Optional.ofNullable("hello");
+        if(myOptional.isPresent()){
+            System.out.println(myOptional.get().length());
+        }
+
+        int result = Arrays.stream(arr).reduce(1, (a,b) -> a*b); // 초기값 지정 곱하기이기 때문에 1
+        System.out.println(result);
+
+        int result2 = Arrays.stream(arr).reduce(0,(a,b) -> a+b); // 초기값 지정 더하기이기 때문에 0
+//        int result3 = Arrays.stream(arr).reduce((a,b) -> a+b).getAsInt(); // 이렇게도 가능하지만 위에 코드처럼 초기값을 확인하는게 더 좋은 코드다.
+        System.out.println(result2);
+
+        String[] stArr = {"hello", "java", "world"}; // "hello, java, world"로 출력하기 초기값 "" + 후 구분자, 넣기
+        Optional<String> answer = Arrays.stream(stArr).reduce((a,b) -> a+", "+b);
+        if(answer.isPresent()){ // 만약 answer에 값이 있으면
+            System.out.println(answer.get()); // answer를 출력한다.
+        }
+
+
 
 
     }
