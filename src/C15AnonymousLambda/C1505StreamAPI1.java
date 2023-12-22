@@ -140,20 +140,69 @@ public class C1505StreamAPI1 {
         Student s = myStudents.stream().filter(a->a.getAge()>30).findFirst().get();
 //        System.out.println(s);
 
-//        Student객체 실습
-//        1)가장 나이 어린 사람 찾기 //찾아서 정보 출력 String
-//        2)30대가 몇명인지 출력 String
-//        3)모든 객체의 평균나이 출력
-//        4)30세 이하 선착순 누군인지 출력 // sorted findFirst
+////        Student객체 실습
+////        1)가장 나이 어린 사람 찾기 //찾아서 정보 출력 String
+////        2)30대가 몇명인지 출력 String
+////        3)모든 객체의 평균나이 출력
+////        4)30세 이하 선착순 누군인지 출력 // sorted findFirst
+//
+//        System.out.println(myStudents.stream().sorted((o1,o2) -> o1.getAge()-o2.getAge()).findFirst().get());
+//        System.out.println(myStudents.stream().min((o1,o2) -> o1.getAge()-o2.getAge()).get());
+//
+//        System.out.println(myStudents.stream().filter(a->a.getAge()>=30).count());
+//
+//        System.out.println(myStudents.stream().mapToInt(a->a.getAge()).average().getAsDouble());
+//
+//        System.out.println(myStudents.stream().filter(a->a.getAge()<=30).findFirst().get());
 
-        System.out.println(myStudents.stream().sorted((o1,o2) -> o1.getAge()-o2.getAge()).findFirst().get());
-        System.out.println(myStudents.stream().min((o1,o2) -> o1.getAge()-o2.getAge()).get());
 
-        System.out.println(myStudents.stream().filter(a->a.getAge()>=30).count());
+//        Optional
+//        Optional의 사용이유
+//        java에서 optional객체로 return
+//        Optional을 명시적으로 생성할일 거의 없다.
 
-        System.out.println(myStudents.stream().mapToInt(a->a.getAge()).average().getAsDouble());
+//        기존의 java의 null
+        String st = null;
+        if(st != null){
+            System.out.println(st.compareTo("abc"));
+        }
 
-        System.out.println(myStudents.stream().filter(a->a.getAge()<=30).findFirst().get());
+//        java8이후에 나온 Optional객체를 통해 특정 객체에 값이 없을지도 모른다는 것을 명시적으로 표현
+//        Optional객체에 빈값을 명시적으로 넣는 방법 : Optional.empty();
+        Optional<String> opt1 = Optional.empty(); // 문제를 발생시키는 빈값
+//        빈값인지 아닌지 check하는 메서드 : isPresent()
+        if(opt1.isPresent()){
+            System.out.println(opt1.get().compareTo("abc"));
+        } else{
+            System.out.println("값이 없습니다.");
+        }
+
+//        optional객체 생성
+        Optional<String> opt2 = Optional.ofNullable("hello"); // null이 있을수도 있음을 의미.
+
+//        ⭐orElse관련 메서드 사용하여 null(빈값)처리
+//        ⭐orElse(), orElseGet(), ⭐orElseThrow() : Spring 예외처리에서 자주사용되는 메서드(orElseThrow())
+
+////        ⭐orElse() : 값이 있으면 해당값 return, 없으면 default지정값 return
+//        System.out.println(opt2.orElse("").compareTo("abc"));
+//
+////        orElseGet() : 값이 있으면 해당값 return, 없으면 람다함수 또는 메소드참조가 실행
+//        System.out.println(opt1.orElseGet(String::new));
+//
+////        ⭐orElseThrow() : 값이 있으면 해당값 return, 없으면 지정된 예외 강제 발생
+////        특정한 상황에서는 강제로 예외를 발생시켜야 한다. // 그래야 원하는 예외처리 코드와 문구를 보내줄 수 있기 때문.
+//        int result = opt1.orElseThrow(()-> new NoSuchElementException("객체에 값이 없습니다.")).compareTo("abc");
+//        System.out.println(result);
+
+//        OptionalInt, OptionalDouble
+        OptionalInt oi = new ArrayList<>(Arrays.asList(1,2,3,4)).stream().mapToInt(a->a).max();
+//        isPresent로 check
+        if(oi.isPresent()){
+        }else {
+        }
+//        orelse 등의 방법 활용
+        System.out.println(oi.orElseThrow(()->new NoSuchElementException("no value")));
+
 
 
 
