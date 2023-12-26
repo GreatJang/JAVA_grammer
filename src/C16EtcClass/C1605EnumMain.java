@@ -14,7 +14,7 @@ public class C1605EnumMain {
         s3.setName("hong3");
 //        타입이 여전히 String 타입이므로, 클래스변수를 사용하지 않을수도 있다. // 원하는 타입을 그냥 넣어버릴수도 있음
         s3.setClassGrade("third");
-        
+
         EnumStudent s4 = new EnumStudent();
         s4.setName("hong4");
 //        String으로 세팅불가. -> 타입까지 체크하므로
@@ -43,7 +43,7 @@ class EnumStudent{
     private Role role;
     //    String타입이 아닌 Role타입을 신규로 지정
     // Role enum 클래스를 사용하도록 타입을 Role로 설정해주어야함. // Role 타입
-    
+
     public String getName() {
         return name;
     }
