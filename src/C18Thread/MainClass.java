@@ -35,8 +35,14 @@ public class MainClass {
 
 
         for(int i=0; i<1000; i++){
-            Thread th = new Thread(() -> Library.borrowBook());
+            Thread th = new Thread(() -> Library.borrowBook()); // 멀티스레스 동시성 테스트
             th.start();
+//            join메서드를 통해 다른 스레드의 완료전까지 새로운 스레드가 실행되지 않도록 막음.
+//            try { // 스레드에 락을 걸어버리는 것이기때문에 부하가 크다.
+//                th.join();
+//            } catch (InterruptedException e) {
+//                throw new RuntimeException(e);
+//            }
         }
         System.out.println("최종 남은 수량 " + Library.bookcount);
 
