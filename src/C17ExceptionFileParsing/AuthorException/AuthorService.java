@@ -3,12 +3,14 @@ package C17ExceptionFileParsing.AuthorException;
 import java.util.*;
 import java.util.Optional;
 
+
 class AuthorService {
     AuthorRepository authorRepository;
     AuthorService(){
         authorRepository = new AuthorRepository();
     }
     void register(Author author) throws IllegalArgumentException{
+
 //        만약에 password가 5자리 이하이면 예외 발생(IllegalArgu)
         if(author.getPassword().length()<=5){
             throw new IllegalArgumentException("비밀번호가 너무 짧습니다.");

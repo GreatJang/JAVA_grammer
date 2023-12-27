@@ -48,7 +48,7 @@ public class C1701Exception {
 
 //    ⭐checked exception은 예외처리가 강제되고, 해당메서드에서 예외처리를 하든지 throws를 통해 호출한 곳에 위임하여야 한다.
 //    이때에 호출한 쪽에서는 예외처리가 강제된다.
-    static void login(String password){
+    static void login(String password) throws IllegalArgumentException{
         if(password.length()<10){
             throw new IllegalArgumentException("비밀번호가 너무 짧습니다.");
         }
