@@ -1,70 +1,85 @@
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.nio.file.Paths;
 import java.util.*;
-public class test2{
+
+class test2{
     public static void main(String[] args) {
-        EnumStudent s1 = new EnumStudent();
-        s1.setName("hong1");
-        s1.setClassGrade(ClassGrade.A1);
+        HttpClient client = HttpClient.newHttpClient();
+        ObjectMapper mapper = new ObjectMapper();
+//        http 요청객체 생성
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://jsonplaceholder.typicode.com/posts"))
+                .GET()
+                .build();
+//        http응답객체 생성
+        try {
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            String post = response.body();
+            JsonNode jsonNode = mapper.readTree(post);
+            System.out.println(jsonNode);
 
-        EnumStudent s2 = new EnumStudent();
-        s2.setName("hong2");
-        s2.setClassGrade(ClassGrade.A2);
+//            post1은 생성자 순서와 같아야함
+            Post post1 = new Post(jsonNode.get("userId").asInt(), jsonNode.get("id").asInt(), jsonNode.get("title").asText(), jsonNode.get("body").asText());
+            System.out.println(post1);
 
-        EnumStudent s3 = new EnumStudent();
-        s2.setName("hong3");
-//        타입이 여전히 String타입이므로, 클래스변수를 사용하지 않을수도 있다. // 원하는 타입을 그냥 넣어버릴수도 있음
-        s2.setClassGrade("third");
+//            readValue를 사용해서 객체로 곧바로 매핑 // 기본생성자만 있어야지 정상적으로 매핑가능
+//            Post post2 = mapper.readValue(post, Post.class);
+//            System.out.println(post2);
+//            JsonNode는 트리구조 이므로
 
-        EnumStudent s4 = new EnumStudent();
-        s4.setName("hong4");
-//        String으로 세팅불가 -> 타입까지 체크하므로
-//        Enum타입 사용시에는 static final 변수와 동일한 방법으로 사용
-        s4.setRole(Role.GENERAL_USER);
-        System.out.println(s4.getRole());
-        System.out.println(s4.getRole().getClass());
-//        enum값 내부에는 저장된 순서대로 0부터 index값이 내부적으로 할당
-        System.out.println(s4.getRole().ordinal());
+//            List<Post> postList = new ArrayList<>();
+//            for(JsonNode j : jsonNode){
+//                Post myPost = mapper.readValue(j.toString(), Post.class);
+//                postList.add(myPost);
+//            }
+//            System.out.println(postList);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
-class ClassGrade{
-    static final String A1 = "first_grade";
-    static final String A2 = "second_grade";
-    static final String A3 = "third_grade";
-}
-enum Role{
-    GENERAL_USER, ADMIN_USER, SUPER_USER;
-}
+class Post{
+    int userId;
+    int id;
+    String title;
+    String body;
 
-
-
-class EnumStudent{
-    private String name;
-//    소속반
-    private String ClassGrade;
-    private Role role;
-//    String 타입이 아닌 Role타입을 신규로 지정
-//    Role enum클래스를 사용하도록 타입을 Role로 설정해주어야함 //Role 타입
-
-    public String getName() {
-        return name;
+    Post(int userId, int id, String title, String body){
+        this.userId = userId;
+        this.id = id;
+        this.title = title;
+        this.body = body;
+    }
+    Post(){
     }
 
-    public String getClassGrade() {
-        return ClassGrade;
+    @Override
+    public String toString() {
+        return "id: " + this.id + " title: " + this.title;
     }
-
-    public Role getRole() {
-        return role;
+    public int getUserId() {
+        return userId;
     }
-
-    public void setName(String name) {
-        this.name = name;
+    public int getId() {
+        return id;
     }
-
-    public void setClassGrade(String classGrade) {
-        ClassGrade = classGrade;
+    public String getTitle() {
+        return title;
     }
-
-    public void setRole(Role role) {
-        this.role = role;
+    public String getBody() {
+        return body;
     }
 }

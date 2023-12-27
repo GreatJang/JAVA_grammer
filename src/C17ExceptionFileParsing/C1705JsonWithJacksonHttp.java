@@ -29,8 +29,8 @@ public class C1705JsonWithJacksonHttp {
 //            System.out.println(jsonNode);
 //
 //            // post1은 생성자 순서와 같아야함.
-//            Post post1 = new Post(jsonNode.get("userId").asInt(), jsonNode.get("id").asInt(), jsonNode.get("title").asText(), jsonNode.get("body").asText());
-//            System.out.println(post1);
+            Post post1 = new Post(jsonNode.get("userId").asInt(), jsonNode.get("id").asInt(), jsonNode.get("title").asText(), jsonNode.get("body").asText());
+            System.out.println(post1);
 
 //            readValue를 사용해서 객체로 곧바로 매핑 //기본생성자만 있어야지 정상적으로 매핑 가능
 //            Post post2 = mapper.readValue(post, Post.class);
