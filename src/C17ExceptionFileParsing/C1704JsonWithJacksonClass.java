@@ -15,8 +15,8 @@ public class C1704JsonWithJacksonClass {
         File myPath = Paths.get("src/C17ExceptionFileParsing/test-data2.json").toFile();
         try {
             JsonNode jsonNode =  mapper.readTree(myPath);
-
             List<Students> StudentsList = new ArrayList<>();
+
             for(JsonNode j : jsonNode.get("students")){
                 Students myStudents = mapper.readValue(j.toString(), Students.class); // toString으로 String으로 변경
                 StudentsList.add(myStudents);
@@ -34,15 +34,6 @@ class Students{
     String classNumber;
     String city;
 
-    Students(){
-
-    }
-    Students(int id, String name, String classNumber, String city){
-        this.id = id;
-        this.name = name;
-        this.classNumber = classNumber;
-        this.city = city;
-    }
     @Override
     public String toString() {
         return "id: " + this.id + " name: " + this.name + " classNumber: " + this.classNumber + " city: " + this.city;
