@@ -12,7 +12,6 @@ class AuthorRepository {
     List<Author> getAuthors(){
         return authors;
     }
-
     Optional<Author> getAuthorByEmail(String email){
         for(Author a : this.authors){
             if(a.getEmail().equals(email)){
