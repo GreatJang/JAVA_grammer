@@ -6,6 +6,7 @@ class test {
     public static void main(String[] args) {
         String before = "olleh";
         String after = "hello";
+
         StringBuilder aft = new StringBuilder(after);
         for (int i = 0; i < before.length(); i++) {
             String a = String.valueOf(before.charAt(i));
