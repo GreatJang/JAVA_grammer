@@ -1,17 +1,22 @@
 class test {
-    public int solution(int n) {
-        n = 7; //3! 3출력
-//        i! ≤ n
-        int answer = 1;
-        for (int i = 2; i <= 10; i++) {
-            answer = answer * i;
-            if(answer ==n){
-                return i;
-            }
-            if(answer > n){
-                return --i;
+    static int[][] static_computers;
+    public static void main(String[] args) {
+        int n = 3;
+        int[][] computers ={{1,1,0},{1,1,1},{0,1,1}};
+        static_computers = computers;
+        dfs(0);
+
+
+
+
+    }
+    static void dfs(int start){
+        System.out.println(start);
+        int count=0;
+        for(int i=0; i< static_computers.length; i++){
+            if(static_computers[start][i]==1){
+                dfs(i);
             }
         }
-        return answer;
     }
 }
