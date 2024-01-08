@@ -3,16 +3,18 @@ import C14Interface.Bank.Model.BankAccount;
 import java.util.*;
 class test3 {
     public static void main(String[] args) {
+        String[] todo_list = {"problemsolving", "practiceguitar", "swim", "studygraph"};
+        boolean[] finished ={true, false, true, false};
+        List<String> list = new ArrayList<>();
 
-        int[] arr = {1, 2, 3, 100, 99, 98};
-        int[] answer = new int[arr.length];
-        for(int i=0; i<arr.length; i++){
-            if(arr[i] >= 50 && arr[i]%2==0){
-                answer[i] = arr[i]/2;
+        for(int i=0; i<finished.length; i++){
+            if(finished[i] == false){
+                list.add(todo_list[i]);
             }
-            if(arr[i] < 50 && arr[i]%2==1){
-                answer[i] = arr[i]*2;
-            }
+        }
+        String[] answer = new String[list.size()];
+        for(int i=0; i< list.size(); i++){
+            answer[i] = list.get(i);
         }
         System.out.println(answer);
     }
