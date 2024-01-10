@@ -32,6 +32,6 @@ class test3 {
                 System.out.println(0);
             }
 
->>>>>>> 6020ba33decceed2769a5cd9f532c0ba3cf97061
+>>>>>>>6020ba33decceed2769a5cd9f532c0ba3cf97061
     }
 }
