@@ -1,7 +1,9 @@
+package openchat_problem;
+
 import java.util.Arrays;
 import java.util.*;
-
-public class testtest {
+// 오픈채팅방 내풀이
+public class openchat_my {
     public static void main(String[] args) {
         //map에 id와 이름을 저장 매핑
         //Enter 포함이면 map value 값으로 뽑아내기

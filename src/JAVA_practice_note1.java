@@ -1,11 +1,6 @@
-import com.sun.source.tree.ArrayAccessTree;
-
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.stream.IntStream;
 
-public class JAVA_practice_231212 {
+public class JAVA_practice_note1 {
     public static void main(String[] args) {
 ////        Array
 ////        표현식1

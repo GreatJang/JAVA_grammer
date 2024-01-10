@@ -1,7 +1,4 @@
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
-public class codingtest_120892 {
+public class codingtest_note1 {
     public static void main(String[] args) {
 
         String cipher = "dfjardstddetckdaccccdegk";

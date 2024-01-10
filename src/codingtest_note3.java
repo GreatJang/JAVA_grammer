@@ -1,5 +1,5 @@
 import java.util.*;
-public class test4 {
+public class codingtest_note3 {
     public static void main(String[] args) {
         //포인터 두개를 두고 start 고정 start +end가 7보다 작으면 end 하나씩 증가
         //7보다 크면 start 하나씩 증가

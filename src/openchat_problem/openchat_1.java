@@ -1,5 +1,7 @@
+package openchat_problem;
+
 import java.util.*;
-public class tesstestest {
+public class openchat_1 {
 //    오픈채팅방 정민
     public String[] openKakao(String[] record) {
         List<String> answer = new ArrayList<>(); // List배열 answer 선언
