@@ -7,7 +7,6 @@ class test3 {
         boolean[] finished ={true, false, true, false};
         List<String> list = new ArrayList<>();
 
-<<<<<<< HEAD
         for(int i=0; i<finished.length; i++){
             if(finished[i] == false){
                 list.add(todo_list[i]);
@@ -18,7 +17,7 @@ class test3 {
             answer[i] = list.get(i);
         }
         System.out.println(answer);
-=======
+
         String my_string = "banana";
         String is_prefix = "ban";
             if(my_string.length()<is_prefix.length()){
@@ -32,6 +31,5 @@ class test3 {
                 System.out.println(0);
             }
 
->>>>>>>6020ba33decceed2769a5cd9f532c0ba3cf97061
     }
 }

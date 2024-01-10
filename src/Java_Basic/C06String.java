@@ -180,9 +180,9 @@ public class C06String {
 //        String[] stArr = a.split(":");
 //        System.out.println(Arrays.toString(stArr));
 //
-//        String b = "a  b c d";
-//        String[] stArr2 = b.split(" ");
-//        System.out.println(Arrays.toString(stArr2));
+        String b = "a  b c d";
+        String[] stArr2 = b.split(" ");
+        System.out.println(Arrays.toString(stArr2));
 //        String[] stArr3 = b.split("\\s+");
 //        System.out.println(Arrays.toString(stArr3));
 
