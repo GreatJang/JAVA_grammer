@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 class codingtest_note2 {
     public static void main(String[] args) {
+
         int[] array = {3, 10, 28};
         int n = 20;
         int temp = 0;

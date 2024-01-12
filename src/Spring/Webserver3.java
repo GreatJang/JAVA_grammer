@@ -11,15 +11,6 @@ public class Webserver3 {
         try {
             ServerSocket serverSocket = new ServerSocket(8081);
             System.out.println("8081 서비스 시작");
-//            Sping에서는 알아서 header/body를 잘라준다.
-//                //header
-//                ⭐POST /somepath HTTP/1.1
-//                Host: www.example.com
-//                ⭐Content-Type: application/x-www-form-urlencoded
-//                Content-Length: 27
-
-//                //body // 한줄띄어쓰면 그뒤쪽은 body
-//                username=johndoe&password=1234
 
             while (true){
                 try(Socket socket = serverSocket.accept()) {
