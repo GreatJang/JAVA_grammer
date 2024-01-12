@@ -13,7 +13,7 @@ public class test5 {
                     answer += alpa[j];
 
                 }
-            }123123
+            }
         }
         System.out.println(answer);
     }
