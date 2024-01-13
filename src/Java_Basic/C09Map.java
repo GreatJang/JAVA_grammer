@@ -58,27 +58,28 @@ public class C09Map {
 //        }
 
 ////        아래의 리스트를 가지고 좋아하는 운동종목과 사람숫자를 map형태로 나타내시오.
-//        List<String> myList = new ArrayList<>();
-//        myList.add("basketball");
-//        myList.add("basketball");
-//        myList.add("basketball");
-//        myList.add("baseball");
-//        myList.add("baseball");
-//        myList.add("tennis");
-//        myList.add("tennis");
-//        myList.add("tennis");
+        List<String> myList = new ArrayList<>();
+        myList.add("basketball");
+        myList.add("basketball");
+        myList.add("basketball");
+        myList.add("baseball");
+        myList.add("baseball");
+        myList.add("tennis");
+        myList.add("tennis");
+        myList.add("tennis");
 
-//        int count =1;
-//        Map<String, Integer> myMap = new HashMap<>();
-//        for (int i = 0; i < myList.size(); i++) {
-//            if(myMap.containsKey(myList.get(i)) == true){
-//                count ++;
-//            }else {
-//                count =1;
-//            }
-//            myMap.put(myList.get(i), count);
-//        }
-//        System.out.println(myMap);
+        int count =1;
+        Map<String, Integer> myMap = new HashMap<>();
+        System.out.println(myMap);
+        for (int i = 0; i < myList.size(); i++) {
+            if(myMap.containsKey(myList.get(i)) == true){
+                count ++;
+            }else {
+                count =1;
+            }
+            myMap.put(myList.get(i), count);
+        }
+        System.out.println(myMap);
 //
 //        Map<String, Integer> myMap = new HashMap<>();
 //        for(String a : myList){
