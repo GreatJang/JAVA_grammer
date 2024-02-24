@@ -41,17 +41,17 @@ public class C07Array {
 //        System.out.println(answer/int_arr.length);
 
 ////        ⭐최대값, 최소값
-//        int[] arr = {10,20,30,12,8,17};
-//        int max = arr[0];
-//        int min = arr[0];
-//        for(int i=0; i<arr.length; i++){
-//            if(max<arr[i]){
-//                max = arr[i];
-//            }
-//            if(min>arr[i]){
-//                min = arr[i];
-//            }
-//        }
+        int[] arr = {10,20,30,12,8,17};
+        int max = arr[0];
+        int min = arr[0];
+        for(int i=0; i<arr.length; i++){
+            if(max<arr[i]){
+                max = arr[i];
+            }
+            if(min>arr[i]){
+                min = arr[i];
+            }
+        }
 
 ////        ⭐배열의 순서바꾸기 문법
 //        int[] arr = {10,20};
